@@ -3,90 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sprawdź, czy dziś jest niedziela handlowa w Polsce. Zobacz najbliższe niedziele handlowe i zaplanuj zakupy." />
-  <meta name="keywords" content="niedziela handlowa, niedziele handlowe 2025, handel w niedzielę, sklepy otwarte w niedzielę" />
+  <meta name="description" content="Czy dzisiaj jest niedziela handlowa? Sprawdź aktualny kalendarz niedziel handlowych w Polsce na 2025 i 2026 rok. Zobacz najbliższe daty handlowe i zaplanuj zakupy." />
+  <meta name="keywords" content="niedziela handlowa, niedziele handlowe 2025, niedziele handlowe 2026, sklepy otwarte w niedzielę, kalendarz niedziel handlowych" />
   <meta name="author" content="NiedzielaHandlowa.pl" />
-  <meta name="google-adsense-account" content="ca-pub-4085660688523771">
-  <title>Czy dziś jest niedziela handlowa? - Niedziele handlowe 2025</title>
-  <style>
-    :root {
-      --primary: #007bff;
-      --background: #f9f9f9;
-      --text: #222;
-      --card-bg: #fff;
-      --shadow: rgba(0, 0, 0, 0.1);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: "Segoe UI", sans-serif;
-      background-color: var(--background);
-      color: var(--text);
-      line-height: 1.6;
-      padding: 1rem;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    h1 {
-      font-size: 2rem;
-      color: var(--primary);
-    }
-
-    .card {
-      background: var(--card-bg);
-      border-radius: 0.75rem;
-      padding: 1.5rem;
-      margin: 1rem auto;
-      box-shadow: 0 2px 6px var(--shadow);
-      max-width: 600px;
-      text-align: center;
-    }
-
-    .card h2 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      margin: 0.5rem 0;
-    }
-
-    .adsense-banner {
-      margin: 2rem auto;
-      max-width: 728px;
-      text-align: center;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.5rem;
-      }
-      .card h2 {
-        font-size: 1.25rem;
-      }
-    }
-  </style>
+  <meta name="google-adsense-account" content="ca-pub-4085660688523771" />
+  <link rel="canonical" href="https://www.niedzielahandlowa.pl/" />
+  <meta property="og:title" content="Czy dziś jest niedziela handlowa?" />
+  <meta property="og:description" content="Zobacz, czy dziś jest niedziela handlowa i poznaj terminy niedziel handlowych w Polsce w 2025 i 2026 roku." />
+  <meta property="og:url" content="https://www.niedzielahandlowa.pl/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta name="robots" content="index, follow" />
+  <title>Czy dziś jest niedziela handlowa? - Kalendarz niedziel handlowych 2025/2026</title>
+  <link rel="stylesheet" href="style.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -105,13 +34,13 @@
     </script>
   </div>
   <main>
-    <div class="card" id="todayInfo">
+    <section class="card" id="todayInfo">
       <h2 id="todayStatus">Ładowanie...</h2>
-    </div>
-    <div class="card" id="upcomingSundays">
+    </section>
+    <section class="card" id="upcomingSundays">
       <h2>Najbliższe 3 niedziele handlowe:</h2>
       <ul id="list"></ul>
-    </div>
+    </section>
   </main>
   <footer>
     &copy; <span id="year"></span> NiedzielaHandlowa.pl. Wszystkie prawa zastrzeżone.
@@ -119,22 +48,9 @@
   <script>
     const handlowe = [
       // 2025
-      "2025-01-26",
-      "2025-03-30",
-      "2025-04-27",
-      "2025-06-29",
-      "2025-08-31",
-      "2025-12-14",
-      "2025-12-21",
+      "2025-01-26","2025-03-30","2025-04-27","2025-06-29","2025-08-31","2025-12-14","2025-12-21",
       // 2026
-      "2026-01-25",
-      "2026-03-29",
-      "2026-04-26",
-      "2026-06-28",
-      "2026-08-30",
-      "2026-12-06",
-      "2026-12-13",
-      "2026-12-20"
+      "2026-01-25","2026-03-29","2026-04-26","2026-06-28","2026-08-30","2026-12-06","2026-12-13","2026-12-20"
     ];
 
     const today = new Date();
