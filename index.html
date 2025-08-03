@@ -15,7 +15,141 @@
   <meta property="og:locale" content="pl_PL" />
   <meta name="robots" content="index, follow" />
   <title>Czy dziś jest niedziela handlowa? - Kalendarz niedziel handlowych 2025/2026</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --primary: #3b82f6;
+      --background: #f9fafb;
+      --text: #111827;
+      --card-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.08);
+      --radius: 1.25rem;
+      --accent: #10b981;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary: #60a5fa;
+        --background: #111827;
+        --text: #f9fafb;
+        --card-bg: #1f2937;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --accent: #34d399;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", "Segoe UI", sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin: 1rem auto;
+      box-shadow: 0 6px 20px var(--shadow);
+      max-width: 800px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.01);
+    }
+
+    .card h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 0.75rem 0;
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem;
+      background: #f3f4f6;
+      border-radius: 0.75rem;
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      li {
+        background: #374151;
+      }
+    }
+
+    .adsense-banner {
+      margin: 2rem auto;
+      max-width: 728px;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .card h2 {
+        font-size: 1.5rem;
+      }
+      .card {
+        padding: 1.5rem;
+        margin: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+      .card h2 {
+        font-size: 1.25rem;
+      }
+      li {
+        font-size: 1rem;
+      }
+    }
+  </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -42,14 +176,16 @@
       <ul id="list"></ul>
     </section>
   </main>
+  <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #111827; color: white; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem; z-index: 1000;">
+    <span>Ta strona używa plików cookies w celu poprawy jakości usług. Korzystając z niej, akceptujesz naszą <a href="#" style="color: #3b82f6; text-decoration: underline;">politykę prywatności</a>.</span>
+    <button onclick="document.getElementById('cookie-banner').style.display='none'" style="background: #10b981; border: none; color: white; padding: 0.5rem 1rem; border-radius: 0.5rem; cursor: pointer;">Akceptuję</button>
+  </div>
   <footer>
     &copy; <span id="year"></span> NiedzielaHandlowa.pl. Wszystkie prawa zastrzeżone.
   </footer>
   <script>
     const handlowe = [
-      // 2025
       "2025-01-26","2025-03-30","2025-04-27","2025-06-29","2025-08-31","2025-12-14","2025-12-21",
-      // 2026
       "2026-01-25","2026-03-29","2026-04-26","2026-06-28","2026-08-30","2026-12-06","2026-12-13","2026-12-20"
     ];
 
