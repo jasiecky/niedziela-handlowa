@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sprawdź, czy dziś jest niedziela handlowa w Polsce. Zobacz najbliższe niedziele handlowe i zaplanuj zakupy." />
+  <meta name="keywords" content="niedziela handlowa, niedziele handlowe 2025, handel w niedzielę, sklepy otwarte w niedzielę" />
+  <meta name="author" content="NiedzielaHandlowa.pl" />
+  <title>Czy dzisiaj jest niedziela handlowa? - Niedziele handlowe 2025</title>
+  <style>
+    :root {
+      --primary: #007bff;
+      --background: #f9f9f9;
+      --text: #222;
+      --card-bg: #fff;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 1rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin: 1rem auto;
+      box-shadow: 0 2px 6px var(--shadow);
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 0.5rem 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+      .card h2 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Czy dzisiaj jest niedziela handlowa?</h1>
+  </header>
+  <main>
+    <div class="card" id="todayInfo">
+      <h2 id="todayStatus">Ładowanie...</h2>
+    </div>
+    <div class="card" id="upcomingSundays">
+      <h2>Najbliższe niedziele handlowe:</h2>
+      <ul id="list"></ul>
+    </div>
+  </main>
+  <footer>
+    &copy; <span id="year"></span> NiedzielaHandlowa.pl. Wszystkie prawa zastrzeżone.
+  </footer>
+  <script>
+    const handlowe2025 = [
+      "2025-01-26",
+      "2025-03-30",
+      "2025-04-27",
+      "2025-06-29",
+      "2025-08-31",
+      "2025-12-14",
+      "2025-12-21"
+    ];
+
+    const today = new Date();
+    const todayStr = today.toISOString().split('T')[0];
+    const todayStatus = document.getElementById("todayStatus");
+    const nextDate = document.getElementById("nextDate");
+    const list = document.getElementById("list");
+    const yearSpan = document.getElementById("year");
+    yearSpan.textContent = today.getFullYear();
+
+    if (handlowe2025.includes(todayStr)) {
+      todayStatus.textContent = "Tak! Dzisiaj jest niedziela handlowa 🛍️";
+    } else {
+      todayStatus.textContent = "Nie, dzisiaj nie ma niedzieli handlowej.";
+    }
+
+    const upcoming = handlowe2025.filter(date => date > todayStr);
+
+    if (upcoming.length) {
+      nextDate.textContent = formatDate(upcoming[0]);
+      upcoming.slice(0, 3).forEach(date => {
+        const li = document.createElement("li");
+        li.textContent = formatDate(date);
+        list.appendChild(li);
+      });
+    } else {
+      nextDate.textContent = "Brak nadchodzących niedziel handlowych.";
+    }
+
+    function formatDate(dateStr) {
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const date = new Date(dateStr);
+      return date.toLocaleDateString('pl-PL', options);
+    }
+  </script>
+</body>
+</html>
