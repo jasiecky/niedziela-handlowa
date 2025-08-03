@@ -6,7 +6,7 @@
   <meta name="description" content="Sprawdź, czy dziś jest niedziela handlowa w Polsce. Zobacz najbliższe niedziele handlowe i zaplanuj zakupy." />
   <meta name="keywords" content="niedziela handlowa, niedziele handlowe 2025, handel w niedzielę, sklepy otwarte w niedzielę" />
   <meta name="author" content="NiedzielaHandlowa.pl" />
-  <title>Czy dzisiaj jest niedziela handlowa? - Niedziele handlowe 2025</title>
+  <title>Czy dziś jest niedziela handlowa? - Niedziele handlowe 2025</title>
   <style>
     :root {
       --primary: #007bff;
@@ -83,14 +83,14 @@
 </head>
 <body>
   <header>
-    <h1>Czy dzisiaj jest niedziela handlowa?</h1>
+    <h1>Czy dziś jest niedziela handlowa?</h1>
   </header>
   <main>
     <div class="card" id="todayInfo">
       <h2 id="todayStatus">Ładowanie...</h2>
     </div>
     <div class="card" id="upcomingSundays">
-      <h2>Najbliższe niedziele handlowe:</h2>
+      <h2>Najbliższe 3 niedziele handlowe:</h2>
       <ul id="list"></ul>
     </div>
   </main>
@@ -111,28 +111,28 @@
     const today = new Date();
     const todayStr = today.toISOString().split('T')[0];
     const todayStatus = document.getElementById("todayStatus");
-    const nextDate = document.getElementById("nextDate");
     const list = document.getElementById("list");
     const yearSpan = document.getElementById("year");
     yearSpan.textContent = today.getFullYear();
 
     if (handlowe2025.includes(todayStr)) {
-      todayStatus.textContent = "Tak! Dzisiaj jest niedziela handlowa 🛍️";
+      todayStatus.textContent = "Tak! Dziś jest niedziela handlowa 🛍️";
     } else {
-      todayStatus.textContent = "Nie, dzisiaj nie ma niedzieli handlowej.";
+      todayStatus.textContent = "Nie, dziś jest niedziela niehandlowa.";
     }
 
     const upcoming = handlowe2025.filter(date => date > todayStr);
 
     if (upcoming.length) {
-      nextDate.textContent = formatDate(upcoming[0]);
       upcoming.slice(0, 3).forEach(date => {
         const li = document.createElement("li");
         li.textContent = formatDate(date);
         list.appendChild(li);
       });
     } else {
-      nextDate.textContent = "Brak nadchodzących niedziel handlowych.";
+      const li = document.createElement("li");
+      li.textContent = "Brak nadchodzących niedziel handlowych.";
+      list.appendChild(li);
     }
 
     function formatDate(dateStr) {
