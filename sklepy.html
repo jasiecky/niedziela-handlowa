@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Czy dzisiaj jest niedziela handlowa? Sprawdź aktualny kalendarz niedziel handlowych w Polsce na 2025 i 2026 rok. Zobacz najbliższe daty handlowe i zaplanuj zakupy." />
-  <meta name="keywords" content="niedziela handlowa, niedziele handlowe 2025, niedziele handlowe 2026, sklepy otwarte w niedzielę, kalendarz niedziel handlowych" />
+  <meta name="description" content="Pełny kalendarz niedziel handlowych w Polsce na lata 2025 i 2026. Zobacz wszystkie daty otwartych niedziel handlowych." />
+  <meta name="keywords" content="kalendarz niedziel handlowych, niedziele handlowe 2025, niedziele handlowe 2026, otwarte sklepy, lista niedziel" />
   <meta name="author" content="NiedzielaHandlowa.pl" />
-  <link rel="canonical" href="https://www.niedzielahandlowa.pl/" />
-  <title>Czy dziś jest niedziela handlowa? - NiedzielaHandlowa.pl</title>
+  <link rel="canonical" href="https://www.niedzielahandlowa.pl/kalendarz" />
+  <title>Kalendarz niedziel handlowych 2025 / 2026 – NiedzielaHandlowa.pl</title>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     body {
       font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
       background-color: #f9fafb;
@@ -22,13 +21,11 @@
       line-height: 1.7;
       padding: 2rem 1rem;
     }
-
     .container {
       max-width: 960px;
       margin: 0 auto;
       padding-inline: 1rem;
     }
-
     nav.navbar {
       background-color: #ffffff;
       border-radius: 12px;
@@ -36,14 +33,12 @@
       margin-bottom: 2rem;
       padding: 1rem 2rem;
     }
-
     .navbar ul {
       display: flex;
       justify-content: center;
       list-style: none;
       gap: 2rem;
     }
-
     .navbar a {
       text-decoration: none;
       color: #374151;
@@ -52,16 +47,13 @@
       border-radius: 6px;
       transition: background-color 0.2s ease;
     }
-
     .navbar a:hover {
       background-color: #e5e7eb;
     }
-
     .navbar a.active {
       color: #1f2937;
       font-weight: 600;
     }
-
     .card {
       background-color: #ffffff;
       border-radius: 12px;
@@ -70,24 +62,20 @@
       margin-bottom: 2rem;
       text-align: center;
     }
-
     .card h1 {
       font-size: 2.2rem;
       color: #1d4ed8;
       margin-bottom: 1rem;
     }
-
     .card h2 {
       font-size: 1.5rem;
       color: #1f2937;
       margin-bottom: 1rem;
     }
-
     ul {
       list-style: none;
       padding: 0;
     }
-
     li {
       background-color: #f1f5f9;
       padding: 0.75rem 1rem;
@@ -96,14 +84,12 @@
       max-width: 80%;
       font-size: 1.05rem;
     }
-
     footer {
       text-align: center;
       font-size: 0.9rem;
       color: #6b7280;
       padding-top: 2rem;
     }
-
     @media (max-width: 600px) {
       .navbar ul {
         flex-direction: column;
@@ -123,21 +109,16 @@
   <div class="container">
     <nav class="navbar">
       <ul>
-        <li><a href="/" class="active">Strona główna</a></li>
-        <li><a href="/kalendarz">Niedziele handlowe</a></li>
+        <li><a href="/">Strona główna</a></li>
+        <li><a href="/kalendarz" class="active">Niedziele handlowe</a></li>
         <li><a href="/sklepy">Otwarte sklepy</a></li>
       </ul>
     </nav>
 
     <main>
-      <section class="card" id="todayInfo">
-        <h1>Czy dzisiaj jest niedziela handlowa?</h1>
-        <h2 id="todayStatus">Ładowanie...</h2>
-      </section>
-
-      <section class="card" id="upcomingSundays">
-        <h2>Najbliższe niedziele handlowe:</h2>
-        <ul id="list"></ul>
+      <section class="card">
+        <h1>Otwarte sklepy</h1>
+        <ul id="calendar-list"></ul>
       </section>
     </main>
 
@@ -145,45 +126,5 @@
       &copy; <span id="year"></span> NiedzielaHandlowa.pl. Wszelkie prawa zastrzeżone.
     </footer>
   </div>
-
-  <script>
-    const handlowe = [
-      "2025-01-26","2025-03-30","2025-04-27","2025-06-29","2025-08-31","2025-12-14","2025-12-21",
-      "2026-01-25","2026-03-29","2026-04-26","2026-06-28","2026-08-30","2026-12-06","2026-12-13","2026-12-20"
-    ];
-
-    const today = new Date();
-    const todayStr = today.toISOString().split('T')[0];
-    const todayStatus = document.getElementById("todayStatus");
-    const list = document.getElementById("list");
-    const yearSpan = document.getElementById("year");
-    yearSpan.textContent = today.getFullYear();
-
-    if (handlowe.includes(todayStr)) {
-      todayStatus.textContent = "Tak! Dziś jest niedziela handlowa 🛍️";
-    } else {
-      todayStatus.textContent = "Nie, dziś jest niedziela niehandlowa.";
-    }
-
-    const upcoming = handlowe.filter(date => date > todayStr);
-
-    if (upcoming.length) {
-      upcoming.slice(0, 3).forEach(date => {
-        const li = document.createElement("li");
-        li.textContent = formatDate(date);
-        list.appendChild(li);
-      });
-    } else {
-      const li = document.createElement("li");
-      li.textContent = "Brak nadchodzących niedziel handlowych.";
-      list.appendChild(li);
-    }
-
-    function formatDate(dateStr) {
-      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-      const date = new Date(dateStr);
-      return date.toLocaleDateString('pl-PL', options);
-    }
-  </script>
 </body>
 </html>
