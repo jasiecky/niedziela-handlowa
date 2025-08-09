@@ -6,13 +6,16 @@
   <meta name="theme-color" content="#ffffff">
 
   <title>Kalendarz niedziel handlowych – NiedzielaHandlowa.info</title>
-  <meta name="description" content="Nadchodzące niedziele handlowe w Polsce. Sprawdź przyszłe daty i zaplanuj zakupy." />
+  <meta name="description" content="Kalendarz niedziel handlowych w Polsce – zobacz nadchodzące daty i zaplanuj zakupy. Prosta, aktualna lista tylko przyszłych terminów." />
+  <meta name="keywords" content="kalendarz niedziel handlowych, kiedy niedziela handlowa, daty niedziel handlowych, nadchodzące niedziele handlowe, harmonogram niedziel handlowych" />
   <meta name="author" content="NiedzielaHandlowa.info" />
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
   <meta name="google-adsense-account" content="ca-pub-4085660688523771" />
 
   <link rel="canonical" href="https://www.niedzielahandlowa.info/kalendarz" />
   <link rel="alternate" hreflang="pl-PL" href="https://www.niedzielahandlowa.info/kalendarz" />
+  <link rel="alternate" hreflang="pl" href="https://www.niedzielahandlowa.info/kalendarz" />
+  <link rel="alternate" hreflang="x-default" href="https://www.niedzielahandlowa.info/kalendarz" />
   <link rel="sitemap" type="application/xml" href="https://www.niedzielahandlowa.info/sitemap.xml" />
 
   <!-- Performance -->
@@ -65,6 +68,7 @@
     /* Tabela – wszystko wyśrodkowane */
     .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
     table{width:100%;border-collapse:collapse;font-size:var(--step--1)}
+    caption{caption-side:top;padding:.5rem 0;font-weight:700;color:#1e3a8a}
     thead th{
       text-align:center; background:#eef2ff; color:#1e3a8a;
       position:sticky; top:0; z-index:1;
@@ -89,12 +93,34 @@
   <!-- Structured data (statyczne) -->
   <script type="application/ld+json">
   [
-    {"@context":"https://schema.org","@type":"WebSite","name":"NiedzielaHandlowa.info","url":"https://www.niedzielahandlowa.info/","inLanguage":"pl-PL"},
-    {"@context":"https://schema.org","@type":"WebPage","name":"Kalendarz niedziel handlowych","url":"https://www.niedzielahandlowa.info/kalendarz","isPartOf":{"@type":"WebSite","name":"NiedzielaHandlowa.info","url":"https://www.niedzielahandlowa.info/"},"inLanguage":"pl-PL"},
-    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Strona główna","item":"https://www.niedzielahandlowa.info/"},
-      {"@type":"ListItem","position":2,"name":"Kalendarz","item":"https://www.niedzielahandlowa.info/kalendarz"}
-    ]}
+    {
+      "@context":"https://schema.org",
+      "@type":"WebSite",
+      "name":"NiedzielaHandlowa.info",
+      "url":"https://www.niedzielahandlowa.info/",
+      "inLanguage":"pl-PL",
+      "potentialAction":{
+        "@type":"SearchAction",
+        "target":"https://www.niedzielahandlowa.info/?q={search_term_string}",
+        "query-input":"required name=search_term_string"
+      }
+    },
+    {
+      "@context":"https://schema.org",
+      "@type":"WebPage",
+      "name":"Kalendarz niedziel handlowych",
+      "url":"https://www.niedzielahandlowa.info/kalendarz",
+      "isPartOf":{"@type":"WebSite","name":"NiedzielaHandlowa.info","url":"https://www.niedzielahandlowa.info/"},
+      "inLanguage":"pl-PL"
+    },
+    {
+      "@context":"https://schema.org",
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Strona główna","item":"https://www.niedzielahandlowa.info/"},
+        {"@type":"ListItem","position":2,"name":"Kalendarz","item":"https://www.niedzielahandlowa.info/kalendarz"}
+      ]
+    }
   ]
   </script>
 </head>
@@ -129,12 +155,12 @@
         <section class="card center" id="calendarIntro">
           <h1>Kalendarz niedziel handlowych</h1>
           <p class="lead">
-            Poniżej znajdziesz <strong>nadchodzące daty niedziel handlowych</strong> w Polsce. Zestawienie jest czytelne i aktualne,
-            dzięki czemu szybko sprawdzisz, kiedy zrobisz zakupy w niedzielę.</em>
+            Poniżej znajdziesz <strong>nadchodzące daty niedziel handlowych</strong> w Polsce. Lista pokazuje wyłącznie
+            przyszłe terminy, by szybciej zaplanować zakupy w niedzielę.
           </p>
           <p class="lead">
-            Kalendarz jest przygotowany z myślą o planowaniu zakupów i wyjazdów. Jeśli szukasz krótszej odpowiedzi na dziś,
-            skorzystaj ze strony głównej – tam od razu wyświetlamy status „czy dziś jest niedziela handlowa”.
+            Potrzebujesz krótkiej odpowiedzi? Na <a href="/" aria-label="Przejdź na stronę główną: czy dziś jest niedziela handlowa">stronie głównej</a>
+            sprawdzisz: <em>czy dziś jest niedziela handlowa</em>, <em>czy jutro jest niedziela handlowa</em> oraz zobaczysz najbliższe trzy daty.
           </p>
           <p class="lead-small" id="lastUpdated"></p>
         </section>
@@ -148,6 +174,7 @@
           <h2>Nadchodzące niedziele handlowe</h2>
           <div class="table-wrap">
             <table aria-describedby="calendarIntro">
+              <caption>Kalendarz niedziel handlowych — tylko przyszłe daty</caption>
               <thead>
                 <tr>
                   <th scope="col">Data</th>
@@ -166,9 +193,10 @@
           <ins class="adsbygoogle ad" style="display:block" data-ad-client="ca-pub-4085660688523771" data-ad-slot="5555555555" data-ad-format="auto" data-full-width-responsive="true"></ins>
         </div>
       </main>
+
       <p style="margin-bottom:0.5rem; font-size:var(--step--1); color:var(--muted);">
-      Informacje prezentowane na stronie mają charakter poglądowy i mogą ulec zmianie. 
-      Administrator serwisu nie ponosi odpowiedzialności za ewentualne nieścisłości, niepoprawne lub nieaktualne dane.
+        Informacje prezentowane na stronie mają charakter poglądowy i mogą ulec zmianie.
+        Administrator serwisu nie ponosi odpowiedzialności za ewentualne nieścisłości, niepoprawne lub nieaktualne dane.
       </p>
       <footer class="center">
         &copy; <span id="year"></span> NiedzielaHandlowa.info. Wszelkie prawa zastrzeżone.
@@ -248,7 +276,7 @@
       });
     }
 
-    // JSON-LD: tylko przyszłe daty (same Event z datą)
+    // JSON-LD: tylko przyszłe daty (ItemList z Event)
     (function injectEventsSchema(dates) {
       if (!dates.length) return;
       const itemList = {
