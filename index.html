@@ -204,12 +204,12 @@
       "@type":"FAQPage",
       "mainEntity":[
         { "@type":"Question","name":"Jak sprawdzić, czy dziś jest niedziela handlowa?","acceptedAnswer":{"@type":"Answer","text":"Na stronie głównej wyświetlamy aktualny status dla bieżącej daty w Polsce, uwzględniając strefę czasową Europe/Warsaw. Dzięki temu wynik jest precyzyjny niezależnie od godziny sprawdzania. Aktualizacja odbywa się automatycznie każdego dnia."}},
-        { "@type":"Question","name":"Dlaczego niektóre niedziele są handlowe?","acceptedAnswer":{"@type":"Answer","text":"W Polsce obowiązuje ustawa ograniczająca handel w niedziele. Ustawodawca przewidział jednak wyjątki – kilka razy w roku handel jest dozwolony, najczęściej w okresie przedświątecznym. To rozwiązanie ułatwia robienie większych zakupów w newralgicznych momentach roku."}},
-        { "@type":"Question","name":"Kiedy wypada najbliższa niedziela handlowa?","acceptedAnswer":{"@type":"Answer","text":"Najbliższe trzy terminy prezentujemy w czytelnej liście na stronie. Daty są sortowane rosnąco i podawane w formacie z nazwą dnia tygodnia, aby łatwo zaplanować zakupy."}},
-        { "@type":"Question","name":"Czy lista niedziel handlowych jest aktualna?","acceptedAnswer":{"@type":"Answer","text":"Tak. Terminy weryfikujemy na podstawie oficjalnych źródeł i komunikatów rządowych. W razie zmian przepisów aktualizujemy listę możliwie najszybciej, aby zapewnić wiarygodność informacji."}},
-        { "@type":"Question","name":"Co zrobić, gdy w niedzielę niehandlową muszę coś kupić?","acceptedAnswer":{"@type":"Answer","text":"W niedziele niehandlowe działają m.in. małe sklepy prowadzone przez właściciela, stacje benzynowe, apteki, kioski oraz sklepy funkcjonujące jako placówki pocztowe. W zakładce „Otwarte sklepy” wskazujemy miejsca, które zwykle są czynne."}},
-        { "@type":"Question","name":"Czy daty są takie same w całej Polsce?","acceptedAnswer":{"@type":"Answer","text":"Tak, daty niedziel handlowych są jednolite w całym kraju, ponieważ wynikają z przepisów ustawowych. Lokalnie mogą występować różnice w godzinach otwarcia poszczególnych sklepów."}},
-        { "@type":"Question","name":"Jak często aktualizowany jest kalendarz?","acceptedAnswer":{"@type":"Answer","text":"Co najmniej raz w roku po ogłoszeniu oficjalnych terminów na kolejny okres oraz doraźnie — gdy pojawiają się zmiany ustawowe lub dodatkowe niedziele handlowe."}}
+        { "@type":"Question","name":"Dlaczego niektóre niedziele są handlowe?","acceptedAnswer":{"@type":"Answer","text":"W Polsce obowiązuje ustawa ograniczająca handel w niedziele. Jednak ustawodawca przewidział wyjątki – kilka razy w roku handel jest dozwolony, najczęściej w okresie przedświątecznym lub w newralgicznych momentach zakupowych. Dzięki temu klienci mogą zrobić większe zakupy wtedy, gdy jest to najbardziej potrzebne."}},
+        { "@type":"Question","name":"Kiedy wypada najbliższa niedziela handlowa?","acceptedAnswer":{"@type":"Answer","text":"Najbliższe trzy terminy prezentujemy w czytelnej liście. Daty są sortowane rosnąco i podawane w formacie z nazwą dnia tygodnia (np. „niedziela, 31 sierpnia”), co ułatwia planowanie zakupów."}},
+        { "@type":"Question","name":"Czy lista niedziel handlowych jest aktualna?","acceptedAnswer":{"@type":"Answer","text":"Tak, terminy są regularnie weryfikowane na podstawie oficjalnych źródeł i komunikatów rządowych. Jeżeli w przepisach pojawią się zmiany (np. dodatkowe niedziele handlowe), wprowadzamy aktualizację możliwie najszybciej, aby zachować wiarygodność informacji."}},
+        { "@type":"Question","name":"Co jeśli w niedzielę niehandlową potrzebuję coś kupić?","acceptedAnswer":{"@type":"Answer","text":"W niedziele niehandlowe otwarte są m.in. małe sklepy prowadzone przez właściciela, stacje benzynowe, apteki, kioski, a także sklepy działające jako placówki pocztowe."}},
+        { "@type":"Question","name":"Czy niedziele handlowe są takie same w całej Polsce?","acceptedAnswer":{"@type":"Answer","text":"Tak, daty obowiązują w całym kraju i są regulowane ustawowo, choć poszczególne sklepy mogą mieć różne godziny otwarcia. Zawsze warto sprawdzić lokalne komunikaty danego centrum handlowego lub sieci."}},
+        { "@type":"Question","name":"Jak często aktualizowany jest kalendarz?","acceptedAnswer":{"@type":"Answer","text":"Co najmniej raz w roku po ogłoszeniu oficjalnych terminów na kolejny okres oraz doraźnie – gdy pojawiają się zmiany ustawowe lub dodatkowe niedziele handlowe, szczególnie w sezonie świątecznym."}}
       ]
     }
   ]
@@ -261,16 +261,17 @@
       </div>
 
       <main id="content" role="main">
+        <!-- BOX: DZIŚ -->
         <section class="card" id="todayInfo">
           <h1>Czy dzisiaj jest niedziela handlowa?</h1>
-          <p class="lead">Natychmiastowa odpowiedź dla Polski (strefa czasowa Europe/Warsaw) oraz lista najbliższych terminów.</p>
+          <p class="lead">Na samej górze wyświetlamy aktualny status dla bieżącej daty w Polsce z uwzględnieniem strefy czasowej Europe/Warsaw. Dzięki temu wynik jest zawsze precyzyjny, niezależnie od godziny sprawdzania. Aktualizacja odbywa się codziennie automatycznie.</p>
           <h2 id="todayStatus" aria-live="polite">Ładowanie…</h2>
           <p id="lastUpdated" class="lead" style="font-size:var(--step--1);color:var(--muted);"></p>
           <noscript><p style="margin-top:.5rem">Aby zobaczyć aktualny status i najbliższe terminy, włącz JavaScript.</p></noscript>
         </section>
 
-        <!-- In-content Ad #2 (między kartami) -->
-        <div class="ad-wrapper" aria-label="Reklama - in content 2" role="complementary">
+        <!-- PRZERWA NA REKLAMĘ między „dziś” a „jutro” -->
+        <div class="ad-wrapper" aria-label="Reklama - między dziś a jutro" role="complementary">
           <ins class="adsbygoogle ad"
                style="display:block"
                data-ad-client="ca-pub-4085660688523771"
@@ -279,15 +280,16 @@
                data-full-width-responsive="true"></ins>
         </div>
 
-        <section class="card" id="upcomingSundays">
-          <h2>Najbliższe niedziele handlowe</h2>
-          <ul id="list" class="unstyled" aria-label="Lista najbliższych niedziel handlowych"></ul>
-          <p style="margin-top:1rem;color:var(--muted);font-size:var(--step--1);">
-            Pełny wykaz terminów znajdziesz na podstronie <a href="/kalendarz">kalendarz niedziel handlowych</a>.
-          </p>
+        <!-- BOX: JUTRO -->
+        <section class="card" id="tomorrowInfo">
+          <h1>Czy jutro jest niedziela handlowa?</h1>
+          <p class="lead">Szybka odpowiedź na popularne zapytania: „jutro niedziela handlowa”, „czy jutro jest niedziela handlowa”, „jutro jest niedziela handlowa”.</p>
+          <h2 id="tomorrowStatus" aria-live="polite">Ładowanie…</h2>
+          <p id="lastUpdated" class="lead" style="font-size:var(--step--1);color:var(--muted);"></p>
+          <noscript><p style="margin-top:.5rem">Aby zobaczyć aktualny status i najbliższe terminy, włącz JavaScript.</p></noscript>
         </section>
 
-        <!-- In-content Ad #3 (przed FAQ) -->
+        <!-- In-content Ad #3 (między kartami) -->
         <div class="ad-wrapper" aria-label="Reklama - in content 3" role="complementary">
           <ins class="adsbygoogle ad"
                style="display:block"
@@ -297,6 +299,29 @@
                data-full-width-responsive="true"></ins>
         </div>
 
+        <!-- NAJBLIŻSZE DATY -->
+        <section class="card" id="upcomingSundays">
+          <h2>Najbliższe niedziele handlowe</h2>
+          <p class="lead" style="margin-top:-.25rem">Najbliższe trzy terminy prezentujemy w czytelnej liście. Daty są sortowane rosnąco i podawane w formacie z nazwą dnia tygodnia (np. „niedziela, 31 sierpnia”), co ułatwia planowanie zakupów.</p>
+          <ul id="list" class="unstyled" aria-label="Lista najbliższych niedziel handlowych"></ul>
+          <p style="margin-top:1rem;color:var(--muted);font-size:var(--step--1);">
+            Pełny wykaz terminów znajdziesz na podstronie <a href="/kalendarz">kalendarz niedziel handlowych</a>.
+          </p>
+          <p id="lastUpdated" class="lead" style="font-size:var(--step--1);color:var(--muted);"></p>
+          <noscript><p style="margin-top:.5rem">Aby zobaczyć aktualny status i najbliższe terminy, włącz JavaScript.</p></noscript>
+        </section>
+
+        <!-- In-content Ad #4 (przed FAQ) -->
+        <div class="ad-wrapper" aria-label="Reklama - in content 4" role="complementary">
+          <ins class="adsbygoogle ad"
+               style="display:block"
+               data-ad-client="ca-pub-4085660688523771"
+               data-ad-slot="6666666667"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- FAQ (pełne) -->
         <section class="card faq" id="faq">
           <h2>FAQ: niedziele handlowe w Polsce</h2>
           <dl>
@@ -313,7 +338,7 @@
             <dd>Tak, terminy są regularnie weryfikowane na podstawie oficjalnych źródeł i komunikatów rządowych. Jeżeli w przepisach pojawią się zmiany (np. dodatkowe niedziele handlowe), wprowadzamy aktualizację możliwie najszybciej, aby zachować wiarygodność informacji.</dd>
 
             <dt>Co jeśli w niedzielę niehandlową potrzebuję coś kupić?</dt>
-            <dd>W niedziele niehandlowe otwarte są m.in. małe sklepy prowadzone przez właściciela, stacje benzynowe, apteki, kioski, a także sklepy działające jako placówki pocztowe. W zakładce „Otwarte sklepy” wskazujemy miejsca i kategorie punktów, które zwykle są czynne mimo ograniczeń.</dd>
+            <dd>W niedziele niehandlowe otwarte są m.in. małe sklepy prowadzone przez właściciela, stacje benzynowe, apteki, kioski, a także sklepy działające jako placówki pocztowe.</dd>
 
             <dt>Czy niedziele handlowe są takie same w całej Polsce?</dt>
             <dd>Tak, daty obowiązują w całym kraju i są regulowane ustawowo, choć poszczególne sklepy mogą mieć różne godziny otwarcia. Zawsze warto sprawdzić lokalne komunikaty danego centrum handlowego lub sieci.</dd>
@@ -323,14 +348,12 @@
           </dl>
         </section>
       </main>
+
       <footer>
-      <p style="margin-bottom:0.5rem; font-size:var(--step--1); color:var(--muted);">
-      Informacje prezentowane na stronie mają charakter poglądowy i mogą ulec zmianie. 
-      Administrator serwisu nie ponosi odpowiedzialności za ewentualne nieścisłości, niepoprawne lub nieaktualne dane.
-      </p>
-      &copy; <span id="year"></span> NiedzielaHandlowa.info. Wszelkie prawa zastrzeżone.
-      </footer>
-      <footer>
+        <p style="margin-bottom:0.5rem; font-size:var(--step--1); color: var(--muted);">
+          Informacje prezentowane na stronie mają charakter poglądowy i mogą ulec zmianie.
+          Administrator serwisu nie ponosi odpowiedzialności za ewentualne nieścisłości, niepoprawne lub nieaktualne dane.
+        </p>
         &copy; <span id="year"></span> NiedzielaHandlowa.info. Wszelkie prawa zastrzeżone.
       </footer>
     </div>
@@ -381,10 +404,12 @@
       "2027-01-31","2027-03-21","2027-04-25","2027-06-27","2027-08-29","2027-12-05","2027-12-12","2027-12-19"
     ];
 
-    // Data "dziś" w strefie Europe/Warsaw (unikamy przesunięć UTC)
-    function todayInWarsawISO() {
+    // Data w strefie Europe/Warsaw (unikamy przesunięć UTC)
+    function dateInWarsawISO(offsetDays=0) {
+      const now = new Date();
+      now.setDate(now.getDate() + offsetDays);
       const f = new Intl.DateTimeFormat('en-CA', { timeZone:'Europe/Warsaw', year:'numeric', month:'2-digit', day:'2-digit' });
-      const parts = f.formatToParts(new Date());
+      const parts = f.formatToParts(now);
       const y = parts.find(p=>p.type==='year')?.value;
       const m = parts.find(p=>p.type==='month')?.value;
       const d = parts.find(p=>p.type==='day')?.value;
@@ -397,21 +422,34 @@
       return date.toLocaleDateString('pl-PL', opts);
     }
 
-    const todayStr = todayInWarsawISO();
+    // Elementy
     const todayStatus = document.getElementById("todayStatus");
+    const tomorrowStatus = document.getElementById("tomorrowStatus");
     const list = document.getElementById("list");
     const yearSpan = document.getElementById("year");
     const lastUpdated = document.getElementById("lastUpdated");
 
+    // Stemple czasu
+    const todayStr = dateInWarsawISO(0);
+    const tomorrowStr = dateInWarsawISO(1);
     yearSpan.textContent = new Date().toLocaleDateString('pl-PL', { year:'numeric', timeZone:'Europe/Warsaw' });
     lastUpdated.textContent = `Aktualizacja: ${new Date().toLocaleDateString('pl-PL', { timeZone:'Europe/Warsaw' })}`;
 
+    // DZIŚ
     if (handlowe.includes(todayStr)) {
       todayStatus.textContent = "Tak! Dziś jest niedziela handlowa 🛍️";
     } else {
       todayStatus.textContent = "Nie, dziś jest niedziela niehandlowa.";
     }
 
+    // JUTRO
+    if (handlowe.includes(tomorrowStr)) {
+      tomorrowStatus.textContent = "Tak — jutro jest niedziela handlowa.";
+    } else {
+      tomorrowStatus.textContent = "Jutro nie jest niedzielą handlową.";
+    }
+
+    // Najbliższe 3 przyszłe terminy
     const upcoming = handlowe.filter(date => date > todayStr);
     const nextThree = upcoming.slice(0, 3);
 
