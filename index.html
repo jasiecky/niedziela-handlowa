@@ -266,7 +266,7 @@
           <h1>Czy dzisiaj jest niedziela handlowa?</h1>
           <p class="lead">Na samej górze wyświetlamy aktualny status dla bieżącej daty w Polsce z uwzględnieniem strefy czasowej Europe/Warsaw. Dzięki temu wynik jest zawsze precyzyjny, niezależnie od godziny sprawdzania. Aktualizacja odbywa się codziennie automatycznie.</p>
           <h2 id="todayStatus" aria-live="polite">Ładowanie…</h2>
-          <p id="lastUpdated" class="lead" style="font-size:var(--step--1);color:var(--muted);"></p>
+          <p id="lastUpdatedToday" class="lead" style="font-size:var(--step--1);color:var(--muted);"></p>
           <noscript><p style="margin-top:.5rem">Aby zobaczyć aktualny status i najbliższe terminy, włącz JavaScript.</p></noscript>
         </section>
 
@@ -285,7 +285,26 @@
           <h1>Czy jutro jest niedziela handlowa?</h1>
           <p class="lead">Szybka odpowiedź na popularne zapytania: „jutro niedziela handlowa”, „czy jutro jest niedziela handlowa”, „jutro jest niedziela handlowa”.</p>
           <h2 id="tomorrowStatus" aria-live="polite">Ładowanie…</h2>
-          <p id="lastUpdated" class="lead" style="font-size:var(--step--1);color:var(--muted);"></p>
+          <p id="lastUpdatedTomorrow" class="lead" style="font-size:var(--step--1);color:var(--muted);"></p>
+          <noscript><p style="margin-top:.5rem">Aby zobaczyć aktualny status i najbliższe terminy, włącz JavaScript.</p></noscript>
+        </section>
+
+        <!-- PRZERWA NA REKLAMĘ między „jutro” a „najbliższą niedzielą” -->
+        <div class="ad-wrapper" aria-label="Reklama - między jutro a najbliższą niedzielą" role="complementary">
+          <ins class="adsbygoogle ad"
+               style="display:block"
+               data-ad-client="ca-pub-4085660688523771"
+               data-ad-slot="5555555556"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- BOX: NAJBLIŻSZA NIEDZIELA -->
+        <section class="card" id="nearestSundayInfo">
+          <h1>Czy najbliższa niedziela jest handlowa?</h1>
+          <p class="lead">Sprawdzamy najbliższy kalendarzowo weekend i informujemy, czy nadchodząca niedziela jest handlowa.</p>
+          <h2 id="nearestSundayStatus" aria-live="polite">Ładowanie…</h2>
+          <p id="lastUpdatedNearest" class="lead" style="font-size:var(--step--1);color:var(--muted);"></p>
           <noscript><p style="margin-top:.5rem">Aby zobaczyć aktualny status i najbliższe terminy, włącz JavaScript.</p></noscript>
         </section>
 
@@ -301,13 +320,13 @@
 
         <!-- NAJBLIŻSZE DATY -->
         <section class="card" id="upcomingSundays">
-          <h2>Najbliższe niedziele handlowe</h2>
+          <h1>Najbliższe niedziele handlowe</h1>
           <p class="lead" style="margin-top:-.25rem">Najbliższe trzy terminy prezentujemy w czytelnej liście. Daty są sortowane rosnąco i podawane w formacie z nazwą dnia tygodnia (np. „niedziela, 31 sierpnia”), co ułatwia planowanie zakupów.</p>
           <ul id="list" class="unstyled" aria-label="Lista najbliższych niedziel handlowych"></ul>
           <p style="margin-top:1rem;color:var(--muted);font-size:var(--step--1);">
             Pełny wykaz terminów znajdziesz na podstronie <a href="/kalendarz">kalendarz niedziel handlowych</a>.
           </p>
-          <p id="lastUpdated" class="lead" style="font-size:var(--step--1);color:var(--muted);"></p>
+          <p id="lastUpdatedUpcoming" class="lead" style="font-size:var(--step--1);color:var(--muted);"></p>
           <noscript><p style="margin-top:.5rem">Aby zobaczyć aktualny status i najbliższe terminy, włącz JavaScript.</p></noscript>
         </section>
 
@@ -389,6 +408,9 @@
         (adsbygoogle = window.adsbygoogle || []).push({});
         (adsbygoogle = window.adsbygoogle || []).push({});
         (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({}); // nowa przerwa między „jutro” a „najbliższą”
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
       } catch(e) { /* reklamy są opcjonalne */ }
     });
   </script>
@@ -422,18 +444,41 @@
       return date.toLocaleDateString('pl-PL', opts);
     }
 
+    // Najbliższa kalendarzowo niedziela względem "dzisiaj" (Warszawa)
+    function nearestSundayISO() {
+      const todayStr = dateInWarsawISO(0);
+      const base = new Date(todayStr + 'T00:00:00Z'); // operujemy w UTC na lokalnej dacie
+      const dow = base.getUTCDay(); // 0=niedziela
+      const add = (7 - dow) % 7; // jeśli dziś niedziela => 0 (czyli "najbliższa" to dziś)
+      base.setUTCDate(base.getUTCDate() + add);
+      const y = base.getUTCFullYear();
+      const m = String(base.getUTCMonth()+1).padStart(2,'0');
+      const d = String(base.getUTCDate()).padStart(2,'0');
+      return `${y}-${m}-${d}`;
+    }
+
     // Elementy
     const todayStatus = document.getElementById("todayStatus");
     const tomorrowStatus = document.getElementById("tomorrowStatus");
+    const nearestSundayStatus = document.getElementById("nearestSundayStatus");
     const list = document.getElementById("list");
     const yearSpan = document.getElementById("year");
-    const lastUpdated = document.getElementById("lastUpdated");
+    const lastUpdatedToday = document.getElementById("lastUpdatedToday");
+    const lastUpdatedTomorrow = document.getElementById("lastUpdatedTomorrow");
+    const lastUpdatedNearest = document.getElementById("lastUpdatedNearest");
+    const lastUpdatedUpcoming = document.getElementById("lastUpdatedUpcoming");
 
     // Stemple czasu
     const todayStr = dateInWarsawISO(0);
     const tomorrowStr = dateInWarsawISO(1);
+    const nearestSunStr = nearestSundayISO();
+
+    const stamp = new Date().toLocaleDateString('pl-PL', { timeZone:'Europe/Warsaw' });
     yearSpan.textContent = new Date().toLocaleDateString('pl-PL', { year:'numeric', timeZone:'Europe/Warsaw' });
-    lastUpdated.textContent = `Aktualizacja: ${new Date().toLocaleDateString('pl-PL', { timeZone:'Europe/Warsaw' })}`;
+    lastUpdatedToday.textContent = `Aktualizacja: ${stamp}`;
+    lastUpdatedTomorrow.textContent = `Aktualizacja: ${stamp}`;
+    lastUpdatedNearest.textContent = `Aktualizacja: ${stamp}`;
+    lastUpdatedUpcoming.textContent = `Aktualizacja: ${stamp}`;
 
     // DZIŚ
     if (handlowe.includes(todayStr)) {
@@ -449,7 +494,19 @@
       tomorrowStatus.textContent = "Jutro nie jest niedzielą handlową.";
     }
 
-    // Najbliższe 3 przyszłe terminy
+    // NAJBLIŻSZA NIEDZIELA
+    if (handlowe.includes(nearestSunStr)) {
+      // jeśli najbliższa niedziela przypada dziś i jest handlowa — wyświetl adekwatny komunikat
+      nearestSundayStatus.textContent = (nearestSunStr === todayStr)
+        ? "Tak — to dzisiejsza niedziela i jest handlowa."
+        : "Tak — nadchodząca niedziela jest handlowa.";
+    } else {
+      nearestSundayStatus.textContent = (nearestSunStr === todayStr)
+        ? "Dzisiejsza niedziela nie jest handlowa."
+        : "Nadchodząca niedziela nie jest handlowa.";
+    }
+
+    // Najbliższe 3 przyszłe terminy (po dzisiejszej dacie)
     const upcoming = handlowe.filter(date => date > todayStr);
     const nextThree = upcoming.slice(0, 3);
 
