@@ -1,0 +1,34 @@
+# Podstawy SEO – zezwól na indeksowanie
+User-agent: *
+Allow: /
+
+# Google i reklamy (AdSense)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Inne duże wyszukiwarki
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Mapa strony (ważne!)
+Sitemap: https://www.niedzielahandlowa.info/sitemap.xml
+
+# (opcjonalnie) blokady „szumu”, jeśli kiedyś powstaną takie ścieżki:
+# Disallow: /tmp/
+# Disallow: /admin/
+# Disallow: /api/
