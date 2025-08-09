@@ -7,13 +7,15 @@
 
   <title>Czy dziś jest niedziela handlowa? – NiedzielaHandlowa.info</title>
   <meta name="description" content="Sprawdź, czy dzisiaj jest niedziela handlowa w Polsce i zobacz najbliższe daty. Prosta odpowiedź i aktualny wykaz nadchodzących niedziel handlowych." />
-  <meta name="keywords" content="niedziela handlowa, czy dziś jest niedziela handlowa, kalendarz niedziel handlowych, sklepy otwarte w niedzielę" />
+  <meta name="keywords" content="niedziela handlowa, jest niedziela handlowa, czy niedziela jest handlowa, handlowa niedziela, kiedy handlowa niedziela, dzisiaj niedziela handlowa, czy dzisiaj niedziela handlowa, dzisiaj jest niedziela handlowa, czy jest dzisiaj niedziela handlowa, kiedy jest handlowa niedziela, jutro niedziela handlowa, kiedy niedziela handlowa, czy jutro niedziela handlowa, jutro jest niedziela handlowa, czy jutro jest niedziela handlowa, biedronka niedziela handlowa" />
   <meta name="author" content="NiedzielaHandlowa.info" />
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
   <meta name="google-adsense-account" content="ca-pub-4085660688523771" />
 
   <link rel="canonical" href="https://www.niedzielahandlowa.info/" />
   <link rel="alternate" hreflang="pl-PL" href="https://www.niedzielahandlowa.info/" />
+  <link rel="alternate" hreflang="pl" href="https://www.niedzielahandlowa.info/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.niedzielahandlowa.info/" />
   <link rel="sitemap" type="application/xml" href="https://www.niedzielahandlowa.info/sitemap.xml" />
 
   <!-- Performance hints -->
@@ -188,7 +190,12 @@
       "@type":"WebSite",
       "name":"NiedzielaHandlowa.info",
       "url":"https://www.niedzielahandlowa.info/",
-      "inLanguage":"pl-PL"
+      "inLanguage":"pl-PL",
+      "potentialAction":{
+        "@type":"SearchAction",
+        "target":"https://www.niedzielahandlowa.info/?q={search_term_string}",
+        "query-input":"required name=search_term_string"
+      }
     },
     {
       "@context":"https://schema.org",
@@ -299,7 +306,7 @@
                data-full-width-responsive="true"></ins>
         </div>
 
-        <!-- BOX: NAJBLIŻSZA NIEDZIELA (z datą w nagłówku) -->
+        <!-- BOX: NAJBLIŻSZA NIEDZIELA (z datą w nagłówku, bez roku) -->
         <section class="card" id="nearestSundayInfo">
           <h1>Czy najbliższa <span id="nearestSundayDate">ładowanie…</span>, jest handlowa?</h1>
           <p class="lead">Sprawdzamy najbliższą niedzielę kalendarzowo i podajemy, czy będzie handlowa. Dzięki temu możesz łatwo zaplanować zakupy na nadchodzący weekend.</p>
@@ -422,7 +429,7 @@
       "2025-01-26","2025-03-30","2025-04-27","2025-06-29","2025-08-31","2025-12-14","2025-12-21",
       // 2026
       "2026-01-25","2026-03-29","2026-04-26","2026-06-28","2026-08-30","2026-12-06","2026-12-13","2026-12-20",
-      // 2027 (8 niedziel handlowych)
+      // 2027
       "2027-01-31","2027-03-21","2027-04-25","2027-06-27","2027-08-29","2027-12-05","2027-12-12","2027-12-19"
     ];
 
@@ -438,11 +445,12 @@
       return `${y}-${m}-${d}`;
     }
 
-    function formatPl(dateStr, withWeekday=true) {
-      const opts = { year:'numeric', month:'long', day:'numeric', timeZone:'Europe/Warsaw' };
-      if (withWeekday) opts.weekday = 'long';
-      const date = new Date(dateStr + 'T00:00:00');
-      return date.toLocaleDateString('pl-PL', opts);
+    // Format PL (opcje: weekday / year)
+    function formatPl(dateStr, { weekday = true, year = true } = {}) {
+      const opts = { day:'numeric', month:'long', timeZone:'Europe/Warsaw' };
+      if (weekday) opts.weekday = 'long';
+      if (year) opts.year = 'numeric';
+      return new Date(dateStr + 'T00:00:00').toLocaleDateString('pl-PL', opts);
     }
 
     // Najbliższa kalendarzowo niedziela względem "dzisiaj" (Warszawa)
@@ -450,7 +458,7 @@
       const todayStr = dateInWarsawISO(0);
       const base = new Date(todayStr + 'T00:00:00Z'); // operujemy w UTC na lokalnej dacie
       const dow = base.getUTCDay(); // 0=niedziela
-      const add = (7 - dow) % 7; // jeśli dziś niedziela => 0 (czyli "najbliższa" to dziś)
+      const add = (7 - dow) % 7;    // jeśli dziś niedziela => 0 (czyli "najbliższa" to dziś)
       base.setUTCDate(base.getUTCDate() + add);
       const y = base.getUTCFullYear();
       const m = String(base.getUTCMonth()+1).padStart(2,'0');
@@ -496,23 +504,9 @@
       tomorrowStatus.textContent = "Jutro nie jest niedzielą handlową.";
     }
 
-    // NAJBLIŻSZA NIEDZIELA — wstaw datę do nagłówka i status
-    function formatPl(dateStr, noYear = false) {
-  const opts = {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
-    timeZone: 'Europe/Warsaw'
-  };
-  if (!noYear) {
-    opts.year = 'numeric';
-  }
-  return new Date(dateStr + 'T00:00:00').toLocaleDateString('pl-PL', opts);
-}
-
-// NAJBLIŻSZA NIEDZIELA — wstaw datę do nagłówka i status
-const nearestDatePretty = formatPl(nearestSunStr, true); // true => bez roku
-nearestSundayDateEl.textContent = nearestDatePretty;
+    // NAJBLIŻSZA NIEDZIELA — wstaw datę do nagłówka i status (bez roku, z nazwą dnia)
+    const nearestDatePretty = formatPl(nearestSunStr, { weekday: true, year: false });
+    nearestSundayDateEl.textContent = nearestDatePretty;
 
     if (handlowe.includes(nearestSunStr)) {
       nearestSundayStatus.textContent = (nearestSunStr === todayStr)
@@ -532,7 +526,7 @@ nearestSundayDateEl.textContent = nearestDatePretty;
       nextThree.forEach(date => {
         const li = document.createElement("li");
         li.className = "pill";
-        li.textContent = formatPl(date, true);
+        li.textContent = formatPl(date, { weekday: true, year: false }); // lista bez roku
         list.appendChild(li);
       });
     } else {
@@ -542,7 +536,24 @@ nearestSundayDateEl.textContent = nearestDatePretty;
       list.appendChild(li);
     }
 
-    // Dane strukturalne ItemList – generowane dynamicznie z najbliższych terminów
+    // === SEO JSON-LD: Event dla NAJBLIŻSZEJ NIEDZIELI (niewidoczne, nie zmienia treści) ===
+    (function injectNearestSundayEvent(dateISO){
+      const schema = {
+        "@context":"https://schema.org",
+        "@type":"Event",
+        "name":"Niedziela handlowa",
+        "startDate": dateISO,
+        "eventStatus": handlowe.includes(dateISO) ? "https://schema.org/EventScheduled" : "https://schema.org/EventCancelled",
+        "location": { "@type":"Place", "name":"Polska" },
+        "description":"Informacja, czy najbliższa niedziela w Polsce jest handlowa."
+      };
+      const s = document.createElement('script');
+      s.type = 'application/ld+json';
+      s.text = JSON.stringify(schema);
+      document.head.appendChild(s);
+    })(nearestSunStr);
+
+    // SEO JSON-LD: ItemList z najbliższych terminów (jak było)
     (function injectItemListSchema(dates) {
       if (!dates.length) return;
       const itemList = {
