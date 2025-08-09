@@ -299,10 +299,10 @@
                data-full-width-responsive="true"></ins>
         </div>
 
-        <!-- BOX: NAJBLIŻSZA NIEDZIELA -->
+        <!-- BOX: NAJBLIŻSZA NIEDZIELA (z datą w nagłówku) -->
         <section class="card" id="nearestSundayInfo">
-          <h1>Czy najbliższa niedziela jest handlowa?</h1>
-          <p class="lead">Sprawdzamy najbliższy kalendarzowo weekend i informujemy, czy nadchodząca niedziela jest handlowa.</p>
+          <h1>Czy najbliższa <span id="nearestSundayDate">ładowanie…</span>, jest handlowa?</h1>
+          <p class="lead">Sprawdzamy najbliższą niedzielę kalendarzowo i podajemy, czy będzie handlowa. Dzięki temu możesz łatwo zaplanować zakupy na nadchodzący weekend.</p>
           <h2 id="nearestSundayStatus" aria-live="polite">Ładowanie…</h2>
           <p id="lastUpdatedNearest" class="lead" style="font-size:var(--step--1);color:var(--muted);"></p>
           <noscript><p style="margin-top:.5rem">Aby zobaczyć aktualny status i najbliższe terminy, włącz JavaScript.</p></noscript>
@@ -408,7 +408,7 @@
         (adsbygoogle = window.adsbygoogle || []).push({});
         (adsbygoogle = window.adsbygoogle || []).push({});
         (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({}); // nowa przerwa między „jutro” a „najbliższą”
+        (adsbygoogle = window.adsbygoogle || []).push({}); // przerwa między „jutro” a „najbliższą”
         (adsbygoogle = window.adsbygoogle || []).push({});
         (adsbygoogle = window.adsbygoogle || []).push({});
       } catch(e) { /* reklamy są opcjonalne */ }
@@ -438,8 +438,9 @@
       return `${y}-${m}-${d}`;
     }
 
-    function formatPl(dateStr) {
-      const opts = { weekday:'long', year:'numeric', month:'long', day:'numeric', timeZone:'Europe/Warsaw' };
+    function formatPl(dateStr, withWeekday=true) {
+      const opts = { year:'numeric', month:'long', day:'numeric', timeZone:'Europe/Warsaw' };
+      if (withWeekday) opts.weekday = 'long';
       const date = new Date(dateStr + 'T00:00:00');
       return date.toLocaleDateString('pl-PL', opts);
     }
@@ -461,6 +462,7 @@
     const todayStatus = document.getElementById("todayStatus");
     const tomorrowStatus = document.getElementById("tomorrowStatus");
     const nearestSundayStatus = document.getElementById("nearestSundayStatus");
+    const nearestSundayDateEl = document.getElementById("nearestSundayDate");
     const list = document.getElementById("list");
     const yearSpan = document.getElementById("year");
     const lastUpdatedToday = document.getElementById("lastUpdatedToday");
@@ -482,7 +484,7 @@
 
     // DZIŚ
     if (handlowe.includes(todayStr)) {
-      todayStatus.textContent = "Tak! Dziś jest niedziela handlowa 🛍️";
+      todayStatus.textContent = "Tak! Dziś jest niedziela handlowa 🛍️.";
     } else {
       todayStatus.textContent = "Nie, dziś jest niedziela niehandlowa.";
     }
@@ -494,9 +496,25 @@
       tomorrowStatus.textContent = "Jutro nie jest niedzielą handlową.";
     }
 
-    // NAJBLIŻSZA NIEDZIELA
+    // NAJBLIŻSZA NIEDZIELA — wstaw datę do nagłówka i status
+    function formatPl(dateStr, noYear = false) {
+  const opts = {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    timeZone: 'Europe/Warsaw'
+  };
+  if (!noYear) {
+    opts.year = 'numeric';
+  }
+  return new Date(dateStr + 'T00:00:00').toLocaleDateString('pl-PL', opts);
+}
+
+// NAJBLIŻSZA NIEDZIELA — wstaw datę do nagłówka i status
+const nearestDatePretty = formatPl(nearestSunStr, true); // true => bez roku
+nearestSundayDateEl.textContent = nearestDatePretty;
+
     if (handlowe.includes(nearestSunStr)) {
-      // jeśli najbliższa niedziela przypada dziś i jest handlowa — wyświetl adekwatny komunikat
       nearestSundayStatus.textContent = (nearestSunStr === todayStr)
         ? "Tak — to dzisiejsza niedziela i jest handlowa."
         : "Tak — nadchodząca niedziela jest handlowa.";
@@ -514,7 +532,7 @@
       nextThree.forEach(date => {
         const li = document.createElement("li");
         li.className = "pill";
-        li.textContent = formatPl(date);
+        li.textContent = formatPl(date, true);
         list.appendChild(li);
       });
     } else {
