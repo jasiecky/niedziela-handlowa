@@ -121,6 +121,11 @@
     .btn-link{background:transparent;color:#93c5fd;text-decoration:underline;padding:0 .25rem}
   </style>
 
+  <!-- Tymczasowo ukryj reklamy -->
+  <style>
+    .ad-wrapper, .ad, .rail .ad, ins.adsbygoogle { display: none !important; }
+  </style>
+
   <!-- Structured data (statyczne) -->
   <script type="application/ld+json">
   [
@@ -270,11 +275,8 @@
   <script>
     // Daty – spójne z index.html; z dodanym 2027
     const handlowe = [
-      // 2025
       "2025-01-26","2025-03-30","2025-04-27","2025-06-29","2025-08-31","2025-12-14","2025-12-21",
-      // 2026
       "2026-01-25","2026-03-29","2026-04-26","2026-06-28","2026-08-30","2026-12-06","2026-12-13","2026-12-20",
-      // 2027 (8 niedziel handlowych)
       "2027-01-31","2027-03-21","2027-04-25","2027-06-27","2027-08-29","2027-12-05","2027-12-12","2027-12-19"
     ];
 
@@ -301,7 +303,6 @@
     yearSpan.textContent = new Date().toLocaleDateString('pl-PL', { year:'numeric', timeZone:'Europe/Warsaw' });
     lastUpdated.textContent = `Aktualizacja: ${new Date().toLocaleDateString('pl-PL', { timeZone:'Europe/Warsaw' })}`;
 
-    // Sortuj, odfiltruj przeszłość i wyrenderuj same daty
     const datesSorted = [...handlowe].sort((a,b) => a.localeCompare(b));
     const futureDates = datesSorted.filter(d => d >= todayStr);
 
@@ -315,7 +316,6 @@
       });
     }
 
-    // JSON-LD: tylko przyszłe daty (ItemList z Event)
     (function injectEventsSchema(dates) {
       if (!dates.length) return;
       const itemList = {
@@ -356,38 +356,20 @@
       const KEY = 'nh_consent_v2';
       const banner = document.getElementById('consentBanner');
       const saved = localStorage.getItem(KEY);
-
       function hide(){ banner.style.display = 'none'; }
       function show(){ banner.style.display = 'block'; }
-
       function setConsent(all){
         if(all){
-          gtag('consent', 'update', {
-            'ad_user_data': 'granted',
-            'ad_personalization': 'granted',
-            'ad_storage': 'granted',
-            'analytics_storage': 'granted'
-          });
+          gtag('consent', 'update', { 'ad_user_data':'granted','ad_personalization':'granted','ad_storage':'granted','analytics_storage':'granted' });
           localStorage.setItem(KEY, 'all');
         }else{
-          gtag('consent', 'update', {
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'ad_storage': 'denied',
-            'analytics_storage': 'denied'
-          });
+          gtag('consent', 'update', { 'ad_user_data':'denied','ad_personalization':'denied','ad_storage':'denied','analytics_storage':'denied' });
           localStorage.setItem(KEY, 'necessary');
         }
       }
-
       if(!saved){ show(); }
-
-      document.getElementById('btnAccept').addEventListener('click', function(){
-        setConsent(true); hide();
-      });
-      document.getElementById('btnReject').addEventListener('click', function(){
-        setConsent(false); hide();
-      });
+      document.getElementById('btnAccept').addEventListener('click', function(){ setConsent(true); hide(); });
+      document.getElementById('btnReject').addEventListener('click', function(){ setConsent(false); hide(); });
     })();
   </script>
 </body>
