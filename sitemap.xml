@@ -1,32 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Strona główna -->
   <url>
-    <loc>https://www.niedzielahandlowa.info/</loc>
+    <loc>https://niedzielahandlowa.info/</loc>
     <lastmod>2025-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- Kalendarz niedziel handlowych -->
   <url>
-    <loc>https://www.niedzielahandlowa.info/kalendarz</loc>
+    <loc>https://niedzielahandlowa.info/kalendarz</loc>
     <lastmod>2025-08-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <!-- Polityka prywatności -->
   <url>
-    <loc>https://www.niedzielahandlowa.info/privacy.html</loc>
+    <loc>https://niedzielahandlowa.info/privacy.html</loc>
     <lastmod>2025-08-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
-
-  <!-- Regulamin -->
   <url>
-    <loc>https://www.niedzielahandlowa.info/terms.html</loc>
+    <loc>https://niedzielahandlowa.info/terms.html</loc>
     <lastmod>2025-08-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>

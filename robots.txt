@@ -19,4 +19,6 @@ Disallow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://www.niedzielahandlowa.info/sitemap.xml
+Sitemap: https://niedzielahandlowa.info/sitemap.xml
+User-agent: *
+Allow: /
