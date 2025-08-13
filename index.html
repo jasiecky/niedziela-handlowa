@@ -60,6 +60,11 @@
     });
   </script>
 
+  <!-- Enzuzo -->
+  <script src="https://app.enzuzo.com/scripts/cookiebar/469afd9c-787e-11f0-8d16-7780f72d2cd1"></script>
+  <!-- <div id="__enzuzo-root"></div><script id="__enzuzo-root-script" src="https://app.enzuzo.com/scripts/privacy/469afd9c-787e-11f0-8d16-7780f72d2cd1"></script> -->
+  <!-- <div id="__enzuzo-root"></div><script id="__enzuzo-root-script" src="https://app.enzuzo.com/scripts/tos/469afd9c-787e-11f0-8d16-7780f72d2cd1"></script> -->
+  
   <style>
     :root{
       --step--1: clamp(0.85rem, 0.82rem + 0.15vw, 0.95rem);
@@ -368,6 +373,7 @@
         </p>
         <nav aria-label="Stopka — ważne linki" class="lead" style="font-size:var(--step--1);">
           <a href="/privacy.html">Polityka prywatności</a> ·
+          <a href="/tos.html">Regulamin</a> ·
           <a href="/robots.txt" rel="nofollow">robots.txt</a> ·
           <a href="/sitemap.xml">Sitemap</a> ·
           <a href="mailto:lazabawastudios@gmail.com">Kontakt</a>
@@ -555,16 +561,6 @@
       document.head.appendChild(s);
     })(nextThree);
   </script>
-
-  <!-- Prosty baner zgód (Consent Mode v2) -->
-  <div class="consent-banner" id="consentBanner" role="dialog" aria-live="polite" aria-label="Zgody prywatności">
-    <p>Używamy plików cookies do wyświetlania reklam (Google AdSense) oraz podstawowego pomiaru ruchu. Możesz wyrazić zgodę na personalizację lub pozostać przy ustawieniach podstawowych. Szczegóły w <a class="btn-link" href="/privacy.html">Polityce prywatności</a>.</p>
-    <div class="consent-actions">
-      <button class="btn btn-muted" id="btnReject">Tylko niezbędne</button>
-      <button class="btn btn-primary" id="btnAccept">Akceptuję wszystko</button>
-      <a class="btn-link" href="/privacy.html">Ustawienia / więcej</a>
-    </div>
-  </div>
 
   <script>
     (function(){
