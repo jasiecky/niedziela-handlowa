@@ -7,7 +7,7 @@
 
   <title>Czy dziś jest niedziela handlowa? – NiedzielaHandlowa.info</title>
   <meta name="description" content="Czy dziś jest niedziela handlowa? Sprawdź status na dziś, jutro i najbliższą niedzielę handlową w Polsce. Natychmiastowa odpowiedź oraz lista nadchodzących terminów w jednym miejscu." />
-  <meta name="keywords" content="niedziela handlowa, jest niedziela handlowa, czy niedziela jest handlowa, handlowa niedziela, kiedy handlowa niedziela, dzisiaj niedziela handlowa, czy dzisiaj niedziela handlowa, dzisiaj jest niedziela handlowa, czy jest dzisiaj niedziela handlowa, kiedy jest handlowa niedziela, jutro niedziela handlowa, kiedy niedziela handlowa, czy jutro niedziela handlowa, jutro jest niedziela handlowa, czy jutro jest niedziela handlowa, biedronka niedziela handlowa" />
+  <meta name="keywords" content="niedziela handlowa, jest niedziela handlowa, czy niedziela jest handlowa, handlowa niedziela, kiedy handlowa niedziela, dzisiaj niedziela handlowa, czy jest dzisiaj niedziela handlowa, dzisiaj jest niedziela handlowa, czy jest dzisiaj niedziela handlowa, kiedy jest handlowa niedziela, jutro niedziela handlowa, kiedy niedziela handlowa, czy jutro niedziela handlowa, jutro jest niedziela handlowa, czy jutro jest niedziela handlowa, biedronka niedziela handlowa" />
   <meta name="author" content="NiedzielaHandlowa.info" />
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
   <meta name="google-adsense-account" content="ca-pub-4085660688523771" />
@@ -18,7 +18,7 @@
   <link rel="alternate" hreflang="x-default" href="https://www.niedzielahandlowa.info/" />
   <link rel="sitemap" type="application/xml" href="https://www.niedzielahandlowa.info/sitemap.xml" />
 
-  <!-- Icons / PWA -->
+  <!-- Ikony / PWA -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
 
-  <!-- Open Graph -->
+  <!-- OG -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="NiedzielaHandlowa.info" />
   <meta property="og:url" content="https://www.niedzielahandlowa.info/" />
@@ -62,137 +62,24 @@
 
   <!-- Enzuzo -->
   <script src="https://app.enzuzo.com/scripts/cookiebar/469afd9c-787e-11f0-8d16-7780f72d2cd1"></script>
-  <!-- <div id="__enzuzo-root"></div><script id="__enzuzo-root-script" src="https://app.enzuzo.com/scripts/privacy/469afd9c-787e-11f0-8d16-7780f72d2cd1"></script> -->
-  <!-- <div id="__enzuzo-root"></div><script id="__enzuzo-root-script" src="https://app.enzuzo.com/scripts/tos/469afd9c-787e-11f0-8d16-7780f72d2cd1"></script> -->
-  
-  <style>
-    :root{
-      --step--1: clamp(0.85rem, 0.82rem + 0.15vw, 0.95rem);
-      --step-0: clamp(1rem, 0.96rem + 0.3vw, 1.125rem);
-      --step-1: clamp(1.25rem, 1.1rem + 0.9vw, 1.6rem);
-      --step-2: clamp(1.6rem, 1.3rem + 1.6vw, 2.1rem);
-      --radius: 12px;
-      --shadow-1: 0 2px 6px rgba(0,0,0,.05);
-      --shadow-2: 0 4px 12px rgba(0,0,0,.06);
 
-      --bg: #f9fafb;
-      --card: #ffffff;
-      --text: #111827;
-      --muted: #6b7280;
-      --muted-2: #374151;
-      --brand: #1d4ed8;
-      --pill: #f1f5f9;
-      --link: #1f2937;
-    }
+  <!-- Wspólny CSS -->
+  <link rel="stylesheet" href="/assets/common.css">
 
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      padding: env(safe-area-inset-top) 1rem env(safe-area-inset-bottom);
-      -webkit-text-size-adjust: 100%;
-      text-size-adjust: 100%;
-    }
-
-    .page { display: grid; grid-template-columns: minmax(0,1fr); gap: 16px; align-items: start; max-width: 1400px; margin: 0 auto; width: 100%; }
-    .container { max-width: 960px; width: 100%; margin: 0 auto; padding-inline: clamp(0.5rem, 2vw, 1rem); }
-    header { margin-bottom: 1rem; }
-
-    .skip-link{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
-    .skip-link:focus{ position:static; width:auto; height:auto; padding:.5rem .75rem; margin:.5rem 0; background: var(--card); color: var(--text); border-radius: var(--radius); box-shadow: var(--shadow-1); }
-
-    nav[aria-label="Główne"] { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow-1); padding: 0.9rem clamp(1rem, 2vw, 2rem); }
-    .navbar-list { display:flex; justify-content:center; flex-wrap: wrap; list-style:none; gap: clamp(.75rem, 2vw, 2rem); }
-    .navbar-list a { text-decoration:none; color: var(--link); font-weight:600; padding:.35rem .7rem; border-radius:8px; transition: background-color .2s ease; }
-    .navbar-list a:hover { background: rgba(125,125,125,.08); }
-    .navbar-list a[aria-current="page"] { outline: 0; }
-
-    .card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow-2); padding: clamp(1rem, 2.5vw, 2rem); margin-bottom: 1rem; text-align: center; }
-    .card h1 { font-size: var(--step-2); color: var(--brand); margin-bottom:.6rem; line-height:1.25; }
-    .card h2 { font-size: var(--step-1); color: var(--text); margin-bottom: .75rem; }
-    .lead { color: var(--muted-2); margin-bottom: .75rem; font-size: var(--step-0); }
-
-    ul.unstyled { list-style: none; padding: 0; margin: 0; }
-    li.pill { background: var(--pill); padding: .75rem 1rem; border-radius: 10px; margin: .5rem auto; max-width: min(720px, 90%); font-size: var(--step-0); }
-
-    section.faq { text-align: left; }
-    .faq h2 { text-align: center; }
-    .faq dt { font-weight: 700; margin-top: 1rem; font-size: var(--step-0); }
-    .faq dd { margin: .4rem 0 1rem 0; color: var(--muted-2); font-size: var(--step-0); }
-
-    footer { text-align: center; font-size: var(--step--1); color: var(--muted); padding: 1.25rem 0 2rem; display:grid; gap:.25rem; }
-    footer nav a { margin: 0 .35rem; }
-
-    .ad { display:block; margin: 12px auto; min-height: 90px; }
-    .ad-wrapper { text-align:center; margin: 0 0 1rem 0; }
-    .rail { display:none; position:relative; padding-top: .25rem; }
-    .rail .ad { min-height: 250px; width: 100%; max-width: 300px; margin: 0 auto 16px; }
-
-    @media (min-width: 768px){ .container { padding-inline: clamp(1rem, 3vw, 2rem); } .card { margin-bottom: 1.25rem; } }
-    @media (min-width: 1024px){ .container { max-width: 1000px; } }
-    @media (min-width: 1200px){ .page { grid-template-columns: 280px minmax(0, 960px); gap: 20px; } .rail.left { display:block; } .container { padding-inline: 0; } }
-    @media (min-width: 1440px){ .page { grid-template-columns: 300px minmax(0, 960px) 300px; } .rail.right { display:block; } }
-    @media (max-width: 600px){ .navbar-list { flex-direction: column; gap: .75rem; align-items: center; } }
-    @media (prefers-reduced-motion: reduce){ * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; } }
-
-    /* Cookie/Consent banner (lekki) */
-    .consent-banner{
-      position:fixed; inset:auto 0 0 0; background:#111827; color:#fff; padding:1rem;
-      display:none; z-index:9999; box-shadow:0 -6px 20px rgba(0,0,0,.2)
-    }
-    .consent-banner p{margin:.25rem 0 .75rem; line-height:1.5}
-    .consent-actions{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center}
-    .btn{ border:0; padding:.6rem .9rem; border-radius:10px; cursor:pointer; font-weight:700 }
-    .btn-primary{background:#1d4ed8;color:#fff}
-    .btn-muted{background:#374151;color:#fff}
-    .btn-link{background:transparent;color:#93c5fd;text-decoration:underline;padding:0 .25rem}
-  </style>
-
-  <!-- Tymczasowo ukryj reklamy -->
-  <style>
-    .ad-wrapper, .ad, .rail .ad, ins.adsbygoogle { display: none !important; }
-  </style>
-
-  <!-- Structured data (statyczne) -->
+  <!-- JSON-LD (statyczne jak w oryginale) -->
   <script type="application/ld+json">
   [
-    {
-      "@context":"https://schema.org",
-      "@type":"WebSite",
-      "name":"NiedzielaHandlowa.info",
-      "url":"https://www.niedzielahandlowa.info/",
-      "inLanguage":"pl-PL",
-      "potentialAction":{
-        "@type":"SearchAction",
-        "target":"https://www.niedzielahandlowa.info/?q={search_term_string}",
-        "query-input":"required name=search_term_string"
-      }
-    },
-    {
-      "@context":"https://schema.org",
-      "@type":"WebPage",
-      "name":"Czy dziś jest niedziela handlowa?",
-      "url":"https://www.niedzielahandlowa.info/",
-      "isPartOf":{"@type":"WebSite","name":"NiedzielaHandlowa.info","url":"https://www.niedzielahandlowa.info/"},
-      "about":{"@type":"Thing","name":"Niedziele handlowe w Polsce"},
-      "inLanguage":"pl-PL"
-    },
-    {
-      "@context":"https://schema.org",
-      "@type":"FAQPage",
-      "mainEntity":[
-        { "@type":"Question","name":"Jak sprawdzić, czy dziś jest niedziela handlowa?","acceptedAnswer":{"@type":"Answer","text":"Na stronie głównej wyświetlamy aktualny status dla bieżącej daty w Polsce, uwzględniając strefę czasową Europe/Warsaw. Dzięki temu wynik jest precyzyjny niezależnie od godziny sprawdzania. Aktualizacja odbywa się automatycznie każdego dnia."}},
-        { "@type":"Question","name":"Dlaczego niektóre niedziele są handlowe?","acceptedAnswer":{"@type":"Answer","text":"W Polsce obowiązuje ustawa ograniczająca handel w niedziele. Jednak ustawodawca przewidział wyjątki – kilka razy w roku handel jest dozwolony, najczęściej w okresie przedświątecznym lub w newralgicznych momentach zakupowych. Dzięki temu klienci mogą zrobić większe zakupy wtedy, gdy jest to najbardziej potrzebne."}},
-        { "@type":"Question","name":"Kiedy wypada najbliższa niedziela handlowa?","acceptedAnswer":{"@type":"Answer","text":"Najbliższe trzy terminy prezentujemy w czytelnej liście. Daty są sortowane rosnąco i podawane w formacie z nazwą dnia tygodnia (np. „niedziela, 31 sierpnia”), co ułatwia planowanie zakupów."}},
-        { "@type":"Question","name":"Czy lista niedziel handlowych jest aktualna?","acceptedAnswer":{"@type":"Answer","text":"Tak, terminy są regularnie weryfikowane na podstawie oficjalnych źródeł i komunikatów rządowych. Jeżeli w przepisach pojawią się zmiany (np. dodatkowe niedziele handlowe), wprowadzamy aktualizację możliwie najszybciej, aby zachować wiarygodność informacji."}},
-        { "@type":"Question","name":"Co jeśli w niedzielę niehandlową potrzebuję coś kupić?","acceptedAnswer":{"@type":"Answer","text":"W niedziele niehandlowe otwarte są m.in. małe sklepy prowadzone przez właściciela, stacje benzynowe, apteki, kioski, a także sklepy działające jako placówki pocztowe."}},
-        { "@type":"Question","name":"Czy niedziele handlowe są takie same w całej Polsce?","acceptedAnswer":{"@type":"Answer","text":"Tak, daty obowiązują w całym kraju i są regulowane ustawowo, choć poszczególne sklepy mogą mieć różne godziny otwarcia. Zawsze warto sprawdzić lokalne komunikaty danego centrum handlowego lub sieci."}},
-        { "@type":"Question","name":"Jak często aktualizowany jest kalendarz?","acceptedAnswer":{"@type":"Answer","text":"Co najmniej raz w roku po ogłoszeniu oficjalnych terminów na kolejny okres oraz doraźnie – gdy pojawiają się zmiany ustawowe lub dodatkowe niedziele handlowe, szczególnie w sezonie świątecznym."}}
-      ]
-    }
+    { "@context":"https://schema.org","@type":"WebSite","name":"NiedzielaHandlowa.info","url":"https://www.niedzielahandlowa.info/","inLanguage":"pl-PL","potentialAction":{"@type":"SearchAction","target":"https://www.niedzielahandlowa.info/?q={search_term_string}","query-input":"required name=search_term_string"} },
+    { "@context":"https://schema.org","@type":"WebPage","name":"Czy dziś jest niedziela handlowa?","url":"https://www.niedzielahandlowa.info/","isPartOf":{"@type":"WebSite","name":"NiedzielaHandlowa.info","url":"https://www.niedzielahandlowa.info/"},"about":{"@type":"Thing","name":"Niedziele handlowe w Polsce"},"inLanguage":"pl-PL" },
+    { "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+      { "@type":"Question","name":"Jak sprawdzić, czy dziś jest niedziela handlowa?","acceptedAnswer":{"@type":"Answer","text":"Na stronie głównej wyświetlamy aktualny status dla bieżącej daty w Polsce, uwzględniając strefę czasową Europe/Warsaw. Dzięki temu wynik jest precyzyjny niezależnie od godziny sprawdzania. Aktualizacja odbywa się automatycznie każdego dnia."}},
+      { "@type":"Question","name":"Dlaczego niektóre niedziele są handlowe?","acceptedAnswer":{"@type":"Answer","text":"W Polsce obowiązuje ustawa ograniczająca handel w niedziele. Jednak ustawodawca przewidział wyjątki – kilka razy w roku handel jest dozwolony, najczęściej w okresie przedświątecznym lub w newralgicznych momentach zakupowych. Dzięki temu klienci mogą zrobić większe zakupy wtedy, gdy jest to najbardziej potrzebne."}},
+      { "@type":"Question","name":"Kiedy wypada najbliższa niedziela handlowa?","acceptedAnswer":{"@type":"Answer","text":"Najbliższe trzy terminy prezentujemy w czytelnej liście. Daty są sortowane rosnąco i podawane w formacie z nazwą dnia tygodnia (np. „niedziela, 31 sierpnia”), co ułatwia planowanie zakupów."}},
+      { "@type":"Question","name":"Czy lista niedziel handlowych jest aktualna?","acceptedAnswer":{"@type":"Answer","text":"Tak, terminy są regularnie weryfikowane na podstawie oficjalnych źródeł i komunikatów rządowych. Jeżeli w przepisach pojawią się zmiany (np. dodatkowe niedziele handlowe), wprowadzamy aktualizację możliwie najszybciej, aby zachować wiarygodność informacji."}},
+      { "@type":"Question","name":"Co jeśli w niedzielę niehandlową potrzebuję coś kupić?","acceptedAnswer":{"@type":"Answer","text":"W niedziele niehandlowe otwarte są m.in. małe sklepy prowadzone przez właściciela, stacje benzynowe, apteki, kioski, a także sklepy działające jako placówki pocztowe."}},
+      { "@type":"Question","name":"Czy niedziele handlowe są takie same w całej Polsce?","acceptedAnswer":{"@type":"Answer","text":"Tak, daty obowiązują w całym kraju i są regulowane ustawowo, choć poszczególne sklepy mogą mieć różne godziny otwarcia. Zawsze warto sprawdzić lokalne komunikaty danego centrum handlowego lub sieci."}},
+      { "@type":"Question","name":"Jak często aktualizowany jest kalendarz?","acceptedAnswer":{"@type":"Answer","text":"Co najmniej raz w roku po ogłoszeniu oficjalnych terminów na kolejny okres oraz doraźnie – gdy pojawiają się zmiany ustawowe lub dodatkowe niedziele handlowe, szczególnie w sezonie świątecznym."}}
+    ]}
   ]
   </script>
 </head>
@@ -200,27 +87,15 @@
   <a class="skip-link" href="#content">Pomiń nawigację i przejdź do treści</a>
 
   <div class="page">
-    <!-- Lewy rail (pojawia się od 1200px) -->
     <aside class="rail left" role="complementary" aria-label="Reklama - lewa kolumna">
       <div class="ad-wrapper">
-        <ins class="adsbygoogle ad"
-             style="display:block"
-             data-ad-client="ca-pub-4085660688523771"
-             data-ad-slot="1111111111"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle ad" data-ad-client="ca-pub-4085660688523771" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
       </div>
       <div class="ad-wrapper">
-        <ins class="adsbygoogle ad"
-             style="display:block"
-             data-ad-client="ca-pub-4085660688523771"
-             data-ad-slot="2222222222"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle ad" data-ad-client="ca-pub-4085660688523771" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins>
       </div>
     </aside>
 
-    <!-- Główny kontent -->
     <div class="container">
       <header>
         <nav aria-label="Główne">
@@ -231,41 +106,27 @@
         </nav>
       </header>
 
-      <!-- In-content Ad #1 (po nawigacji) -->
       <div class="ad-wrapper" aria-label="Reklama - in content 1" role="complementary">
-        <ins class="adsbygoogle ad"
-             style="display:block"
-             data-ad-client="ca-pub-4085660688523771"
-             data-ad-slot="3333333333"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle ad" data-ad-client="ca-pub-4085660688523771" data-ad-slot="3333333333" data-ad-format="auto" data-full-width-responsive="true"></ins>
       </div>
 
       <main id="content" role="main">
-        <!-- BOX: DZIŚ -->
         <section class="card" id="todayInfo">
           <h1>Czy dzisiaj jest niedziela handlowa?</h1>
           <p class="lead">
-          Dowiedz się, czy <strong>dzisiaj jest niedziela handlowa w Polsce</strong>. Informacje aktualizowane codziennie w oparciu o oficjalny kalendarz niedziel handlowych. 
-          Pełna zgodność z polską strefą czasową Europe/Warsaw. Idealne źródło, gdy chcesz szybko sprawdzić, 
-          <strong>czy sklepy takie jak Biedronka, Lidl, Auchan czy Kaufland są otwarte w niedzielę</strong>.
-          </p>          
+            Dowiedz się, czy <strong>dzisiaj jest niedziela handlowa w Polsce</strong>. Informacje aktualizowane codziennie w oparciu o oficjalny kalendarz niedziel handlowych. 
+            Pełna zgodność z polską strefą czasową Europe/Warsaw. Idealne źródło, gdy chcesz szybko sprawdzić, 
+            <strong>czy sklepy takie jak Biedronka, Lidl, Auchan czy Kaufland są otwarte w niedzielę</strong>.
+          </p>
           <h2 id="todayStatus" aria-live="polite">Ładowanie…</h2>
           <p id="lastUpdatedToday" class="lead" style="font-size:var(--step--1);color:var(--muted);"></p>
           <noscript><p style="margin-top:.5rem">Aby zobaczyć aktualny status i najbliższe terminy, włącz JavaScript.</p></noscript>
         </section>
 
-        <!-- PRZERWA NA REKLAMĘ między „dziś” a „jutro” -->
         <div class="ad-wrapper" aria-label="Reklama - między dziś a jutro" role="complementary">
-          <ins class="adsbygoogle ad"
-               style="display:block"
-               data-ad-client="ca-pub-4085660688523771"
-               data-ad-slot="4444444444"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
+          <ins class="adsbygoogle ad" data-ad-client="ca-pub-4085660688523771" data-ad-slot="4444444444" data-ad-format="auto" data-full-width-responsive="true"></ins>
         </div>
 
-        <!-- BOX: JUTRO -->
         <section class="card" id="tomorrowInfo">
           <h1>Czy jutro jest niedziela handlowa?</h1>
           <p class="lead">
@@ -279,17 +140,10 @@
           <noscript><p style="margin-top:.5rem">Aby zobaczyć aktualny status i najbliższe terminy, włącz JavaScript.</p></noscript>
         </section>
 
-        <!-- PRZERWA NA REKLAMĘ między „jutro” a „najbliższą niedzielą” -->
         <div class="ad-wrapper" aria-label="Reklama - między jutro a najbliższą niedzielą" role="complementary">
-          <ins class="adsbygoogle ad"
-               style="display:block"
-               data-ad-client="ca-pub-4085660688523771"
-               data-ad-slot="5555555556"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
+          <ins class="adsbygoogle ad" data-ad-client="ca-pub-4085660688523771" data-ad-slot="5555555556" data-ad-format="auto" data-full-width-responsive="true"></ins>
         </div>
 
-        <!-- BOX: NAJBLIŻSZA NIEDZIELA (z datą w nagłówku, bez roku) -->
         <section class="card" id="nearestSundayInfo">
           <h1>Czy najbliższa <span id="nearestSundayDate">ładowanie…</span>, jest handlowa?</h1>
           <p class="lead">
@@ -302,17 +156,10 @@
           <noscript><p style="margin-top:.5rem">Aby zobaczyć aktualny status i najbliższe terminy, włącz JavaScript.</p></noscript>
         </section>
 
-        <!-- In-content Ad #3 (między kartami) -->
         <div class="ad-wrapper" aria-label="Reklama - in content 3" role="complementary">
-          <ins class="adsbygoogle ad"
-               style="display:block"
-               data-ad-client="ca-pub-4085660688523771"
-               data-ad-slot="5555555555"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
+          <ins class="adsbygoogle ad" data-ad-client="ca-pub-4085660688523771" data-ad-slot="5555555555" data-ad-format="auto" data-full-width-responsive="true"></ins>
         </div>
 
-        <!-- NAJBLIŻSZE DATY -->
         <section class="card" id="upcomingSundays">
           <h1>Najbliższe niedziele handlowe</h1>
           <p class="lead" style="margin-top:-.25rem">
@@ -328,19 +175,9 @@
           <noscript><p style="margin-top:.5rem">Aby zobaczyć aktualny status i najbliższe terminy, włącz JavaScript.</p></noscript>
         </section>
 
-        <!-- In-content Ad #4 (przed FAQ) -->
-        <div class="ad-wrapper" aria-label="Reklama - in content 4" role="complementary">
-          <ins class="adsbygoogle ad"
-               style="display:block"
-               data-ad-client="ca-pub-4085660688523771"
-               data-ad-slot="6666666667"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-        </div>
-
-        <!-- FAQ (pełne) -->
         <section class="card faq" id="faq">
           <h2>FAQ: niedziele handlowe w Polsce</h2>
+          <!-- (treść FAQ bez zmian) -->
           <dl>
             <dt>Jak sprawdzić, czy dziś jest niedziela handlowa?</dt>
             <dd>Wystarczy wejść na naszą stronę główną. Na samej górze wyświetlamy aktualny status dla bieżącej daty w Polsce z uwzględnieniem strefy czasowej Europe/Warsaw. Dzięki temu wynik jest zawsze precyzyjny, niezależnie od tego, o której godzinie sprawdzasz. Aktualizacja odbywa się codziennie automatycznie.</dd>
@@ -382,206 +219,17 @@
       </footer>
     </div>
 
-    <!-- Prawy rail (pojawia się od 1440px) -->
     <aside class="rail right" role="complementary" aria-label="Reklama - prawa kolumna">
       <div class="ad-wrapper">
-        <ins class="adsbygoogle ad"
-             style="display:block"
-             data-ad-client="ca-pub-4085660688523771"
-             data-ad-slot="6666666666"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle ad" data-ad-client="ca-pub-4085660688523771" data-ad-slot="6666666666" data-ad-format="auto" data-full-width-responsive="true"></ins>
       </div>
       <div class="ad-wrapper">
-        <ins class="adsbygoogle ad"
-             style="display:block"
-             data-ad-client="ca-pub-4085660688523771"
-             data-ad-slot="7777777777"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle ad" data-ad-client="ca-pub-4085660688523771" data-ad-slot="7777777777" data-ad-format="auto" data-full-width-responsive="true"></ins>
       </div>
     </aside>
   </div>
 
-  <!-- Inicjalizacja AdSense po załadowaniu DOM -->
-  <script>
-    window.addEventListener('DOMContentLoaded', function(){
-      try {
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      } catch(e) { }
-    });
-  </script>
-
-  <script>
-    const handlowe = [
-      "2025-01-26","2025-03-30","2025-04-27","2025-06-29","2025-08-31","2025-12-14","2025-12-21",
-      "2026-01-25","2026-03-29","2026-04-26","2026-06-28","2026-08-30","2026-12-06","2026-12-13","2026-12-20",
-      "2027-01-31","2027-03-21","2027-04-25","2027-06-27","2027-08-29","2027-12-05","2027-12-12","2027-12-19"
-    ];
-
-    function dateInWarsawISO(offsetDays=0) {
-      const now = new Date();
-      now.setDate(now.getDate() + offsetDays);
-      const f = new Intl.DateTimeFormat('en-CA', { timeZone:'Europe/Warsaw', year:'numeric', month:'2-digit', day:'2-digit' });
-      const parts = f.formatToParts(now);
-      const y = parts.find(p=>p.type==='year')?.value;
-      const m = parts.find(p=>p.type==='month')?.value;
-      const d = parts.find(p=>p.type==='day')?.value;
-      return `${y}-${m}-${d}`;
-    }
-
-    function formatPl(dateStr, { weekday = true, year = true } = {}) {
-      const opts = { day:'numeric', month:'long', timeZone:'Europe/Warsaw' };
-      if (weekday) opts.weekday = 'long';
-      if (year) opts.year = 'numeric';
-      return new Date(dateStr + 'T00:00:00').toLocaleDateString('pl-PL', opts);
-    }
-
-    function nearestSundayISO() {
-      const todayStr = dateInWarsawISO(0);
-      const base = new Date(todayStr + 'T00:00:00Z');
-      const dow = base.getUTCDay();
-      const add = (7 - dow) % 7;
-      base.setUTCDate(base.getUTCDate() + add);
-      const y = base.getUTCFullYear();
-      const m = String(base.getUTCMonth()+1).padStart(2,'0');
-      const d = String(base.getUTCDate()).padStart(2,'0');
-      return `${y}-${m}-${d}`;
-    }
-
-    const todayStatus = document.getElementById("todayStatus");
-    const tomorrowStatus = document.getElementById("tomorrowStatus");
-    const nearestSundayStatus = document.getElementById("nearestSundayStatus");
-    const nearestSundayDateEl = document.getElementById("nearestSundayDate");
-    const list = document.getElementById("list");
-    const yearSpan = document.getElementById("year");
-    const lastUpdatedToday = document.getElementById("lastUpdatedToday");
-    const lastUpdatedTomorrow = document.getElementById("lastUpdatedTomorrow");
-    const lastUpdatedNearest = document.getElementById("lastUpdatedNearest");
-    const lastUpdatedUpcoming = document.getElementById("lastUpdatedUpcoming");
-
-    const todayStr = dateInWarsawISO(0);
-    const tomorrowStr = dateInWarsawISO(1);
-    const nearestSunStr = nearestSundayISO();
-
-    const stamp = new Date().toLocaleDateString('pl-PL', { timeZone:'Europe/Warsaw' });
-    yearSpan.textContent = new Date().toLocaleDateString('pl-PL', { year:'numeric', timeZone:'Europe/Warsaw' });
-    lastUpdatedToday.textContent = `Aktualizacja: ${stamp}`;
-    lastUpdatedTomorrow.textContent = `Aktualizacja: ${stamp}`;
-    lastUpdatedNearest.textContent = `Aktualizacja: ${stamp}`;
-    lastUpdatedUpcoming.textContent = `Aktualizacja: ${stamp}`;
-
-    if (handlowe.includes(todayStr)) {
-      todayStatus.textContent = "Tak! Dziś jest niedziela handlowa 🛍️.";
-    } else {
-      todayStatus.textContent = "Nie, dziś jest niedziela niehandlowa.";
-    }
-
-    if (handlowe.includes(tomorrowStr)) {
-      tomorrowStatus.textContent = "Tak — jutro jest niedziela handlowa.";
-    } else {
-      tomorrowStatus.textContent = "Jutro nie jest niedzielą handlową.";
-    }
-
-    const nearestDatePretty = formatPl(nearestSunStr, { weekday: true, year: false });
-    nearestSundayDateEl.textContent = nearestDatePretty;
-
-    if (handlowe.includes(nearestSunStr)) {
-      nearestSundayStatus.textContent = (nearestSunStr === todayStr)
-        ? "Tak — to dzisiejsza niedziela i jest handlowa."
-        : "Tak — nadchodząca niedziela jest handlowa.";
-    } else {
-      nearestSundayStatus.textContent = (nearestSunStr === todayStr)
-        ? "Dzisiejsza niedziela nie jest handlowa."
-        : "Nadchodząca niedziela nie jest handlowa.";
-    }
-
-    const upcoming = handlowe.filter(date => date > todayStr);
-    const nextThree = upcoming.slice(0, 3);
-
-    if (nextThree.length) {
-      nextThree.forEach(date => {
-        const li = document.createElement("li");
-        li.className = "pill";
-        li.textContent = formatPl(date, { weekday: true, year: false });
-        list.appendChild(li);
-      });
-    } else {
-      const li = document.createElement("li");
-      li.className = "pill";
-      li.textContent = "Brak nadchodzących niedziel handlowych.";
-      list.appendChild(li);
-    }
-
-    (function injectNearestSundayEvent(dateISO){
-      const schema = {
-        "@context":"https://schema.org",
-        "@type":"Event",
-        "name":"Niedziela handlowa",
-        "startDate": dateISO,
-        "eventStatus": handlowe.includes(dateISO) ? "https://schema.org/EventScheduled" : "https://schema.org/EventCancelled",
-        "location": { "@type":"Place", "name":"Polska" },
-        "description":"Informacja, czy najbliższa niedziela w Polsce jest handlowa."
-      };
-      const s = document.createElement('script');
-      s.type = 'application/ld+json';
-      s.text = JSON.stringify(schema);
-      document.head.appendChild(s);
-    })(nearestSunStr);
-
-    (function injectItemListSchema(dates) {
-      if (!dates.length) return;
-      const itemList = {
-        "@context":"https://schema.org",
-        "@type":"ItemList",
-        "name":"Najbliższe niedziele handlowe",
-        "itemListElement": dates.map((date, i) => ({
-          "@type":"ListItem",
-          "position": i + 1,
-          "item": {
-            "@type":"Event",
-            "name":"Niedziela handlowa",
-            "startDate": date,
-            "eventStatus":"https://schema.org/EventScheduled",
-            "location":{"@type":"Place","name":"Polska"}
-          }
-        }))
-      };
-      const s = document.createElement('script');
-      s.type = 'application/ld+json';
-      s.text = JSON.stringify(itemList);
-      document.head.appendChild(s);
-    })(nextThree);
-  </script>
-
-  <script>
-    (function(){
-      const KEY = 'nh_consent_v2';
-      const banner = document.getElementById('consentBanner');
-      const saved = localStorage.getItem(KEY);
-      function hide(){ banner.style.display = 'none'; }
-      function show(){ banner.style.display = 'block'; }
-      function setConsent(all){
-        if(all){
-          gtag('consent', 'update', { 'ad_user_data':'granted','ad_personalization':'granted','ad_storage':'granted','analytics_storage':'granted' });
-          localStorage.setItem(KEY, 'all');
-        }else{
-          gtag('consent', 'update', { 'ad_user_data':'denied','ad_personalization':'denied','ad_storage':'denied','analytics_storage':'denied' });
-          localStorage.setItem(KEY, 'necessary');
-        }
-      }
-      if(!saved){ show(); }
-      document.getElementById('btnAccept').addEventListener('click', function(){ setConsent(true); hide(); });
-      document.getElementById('btnReject').addEventListener('click', function(){ setConsent(false); hide(); });
-    })();
-  </script>
+  <!-- Wspólny JS -->
+  <script src="/assets/common.js"></script>
 </body>
 </html>
