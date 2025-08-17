@@ -65,13 +65,13 @@ window.addEventListener('DOMContentLoaded', function(){
     if (handlowe.includes(todayStr)) {
       todayStatus.textContent = "Tak! Dziś jest niedziela handlowa 🛍️.";
     } else {
-      todayStatus.textContent = "Nie, dziś jest niedziela niehandlowa.";
+      todayStatus.textContent = "Nie, dzisiaj nie ma niedzieli handlowej.";
     }
 
     if (handlowe.includes(tomorrowStr)) {
       tomorrowStatus.textContent = "Tak — jutro jest niedziela handlowa.";
     } else {
-      tomorrowStatus.textContent = "Jutro nie jest niedzielą handlową.";
+      tomorrowStatus.textContent = "Jutro nie ma niedzieli handlowej.";
     }
 
     const nearestDatePretty = formatPl(nearestSunStr, { weekday: true, year: false });
@@ -83,8 +83,8 @@ window.addEventListener('DOMContentLoaded', function(){
         : "Tak — nadchodząca niedziela jest handlowa.";
     } else {
       nearestSundayStatus.textContent = (nearestSunStr === todayStr)
-        ? "Dzisiejsza niedziela nie jest handlowa."
-        : "Nadchodząca niedziela nie jest handlowa.";
+        ? "Tak, dzisiejsza niedziela nie jest handlowa."
+        : "Nie, nadchodząca niedziela nie jest handlowa.";
     }
 
     const upcoming = handlowe.filter(date => date > todayStr);
