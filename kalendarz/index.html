@@ -18,13 +18,11 @@
   <link rel="alternate" hreflang="x-default" href="https://www.niedzielahandlowa.info/kalendarz" />
   <link rel="sitemap" type="application/xml" href="https://www.niedzielahandlowa.info/sitemap.xml" />
 
-  <!-- Icons / PWA (podmień ścieżki na własne pliki) -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Performance -->
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
 
@@ -47,7 +45,6 @@
 
   <!-- Google Consent Mode v2 (minimal) -->
   <script>
-    // Domyślnie brak zgody do czasu wyboru
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
     gtag('consent', 'default', {
@@ -61,107 +58,19 @@
 
   <!-- Enzuzo -->
   <script src="https://app.enzuzo.com/scripts/cookiebar/469afd9c-787e-11f0-8d16-7780f72d2cd1"></script>
-  <!-- <div id="__enzuzo-root"></div><script id="__enzuzo-root-script" src="https://app.enzuzo.com/scripts/privacy/469afd9c-787e-11f0-8d16-7780f72d2cd1"></script> -->
-  <!-- <div id="__enzuzo-root"></div><script id="__enzuzo-root-script" src="https://app.enzuzo.com/scripts/tos/469afd9c-787e-11f0-8d16-7780f72d2cd1"></script> -->
-  
-  <style>
-    :root{
-      --step--1: clamp(0.85rem, 0.82rem + 0.15vw, 0.95rem);
-      --step-0: clamp(1rem, 0.96rem + 0.3vw, 1.125rem);
-      --step-1: clamp(1.25rem, 1.1rem + 0.9vw, 1.6rem);
-      --step-2: clamp(1.6rem, 1.3rem + 1.6vw, 2.1rem);
-      --radius: 12px;
-      --shadow-1: 0 2px 6px rgba(0,0,0,.05);
-      --shadow-2: 0 4px 12px rgba(0,0,0,.06);
-      --bg: #f9fafb; --card: #ffffff; --text: #111827; --muted: #6b7280; --muted-2: #374151;
-      --brand: #1d4ed8; --pill: #f1f5f9; --link: #1f2937;
-    }
-    *{box-sizing:border-box} html,body{height:100%}
-    body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding:env(safe-area-inset-top) 1rem env(safe-area-inset-bottom)}
-    .page{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;align-items:start;max-width:1400px;margin:0 auto;width:100%}
-    .container{max-width:960px;width:100%;margin:0 auto;padding-inline:clamp(.5rem,2vw,1rem)}
-    header{margin-bottom:1rem}
-    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip-link:focus{position:static;width:auto;height:auto;padding:.5rem .75rem;margin:.5rem 0;background:var(--card);color:var(--text);border-radius:var(--radius);box-shadow:var(--shadow-1)}
-    nav[aria-label="Główne"]{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow-1);padding:.9rem clamp(1rem,2vw,2rem)}
-    .navbar-list{display:flex;justify-content:center;flex-wrap:wrap;list-style:none;gap:clamp(.75rem,2vw,2rem)}
-    .navbar-list a{text-decoration:none;color:var(--link);font-weight:600;padding:.35rem .7rem;border-radius:8px;transition:background-color .2s ease}
-    .navbar-list a:hover{background:rgba(125,125,125,.08)}
 
-    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow-2);padding:clamp(1rem,2.5vw,2rem);margin-bottom:1rem}
-    .center{text-align:center}
-    .card h1{font-size:var(--step-2);color:var(--brand);margin-bottom:.6rem;line-height:1.25;text-align:center}
-    .card h2{font-size:var(--step-1);color:var(--text);margin-bottom:.75rem;text-align:center}
-    .lead{color:var(--muted-2);margin-bottom:.75rem;font-size:var(--step-0);text-align:center}
-    .lead-small{color:var(--muted);font-size:var(--step--1);text-align:center}
+  <!-- Wspólny CSS -->
+  <link rel="stylesheet" href="/assets/common.css">
 
-    .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-    table{width:100%;border-collapse:collapse;font-size:var(--step--1)}
-    caption{caption-side:top;padding:.5rem 0;font-weight:700;color:#1e3a8a}
-    thead th{text-align:center;background:#eef2ff;color:#1e3a8a;position:sticky;top:0;z-index:1}
-    th,td{padding:.9rem;border-bottom:1px solid #e5e7eb;text-align:center}
-
-    .ad{display:block;margin:12px auto;min-height:90px}
-    .ad-wrapper{text-align:center;margin:0 0 1rem 0}
-    .rail{display:none;position:relative;padding-top:.25rem}
-    .rail .ad{min-height:250px;width:100%;max-width:300px;margin:0 auto 16px}
-
-    @media (min-width:768px){.container{padding-inline:clamp(1rem,3vw,2rem)}.card{margin-bottom:1.25rem}}
-    @media (min-width:1024px){.container{max-width:1000px}}
-    @media (min-width:1200px){.page{grid-template-columns:280px minmax(0,960px);gap:20px}.rail.left{display:block}.container{padding-inline:0}}
-    @media (min-width:1440px){.page{grid-template-columns:300px minmax(0,960px) 300px}.rail.right{display:block}}
-
-    /* Cookie/Consent banner (lekki) */
-    .consent-banner{
-      position:fixed; inset:auto 0 0 0; background:#111827; color:#fff; padding:1rem;
-      display:none; z-index:9999; box-shadow:0 -6px 20px rgba(0,0,0,.2)
-    }
-    .consent-banner p{margin:.25rem 0 .75rem; line-height:1.5}
-    .consent-actions{display:flex;gap:.5rem;flex-wrap:wrap}
-    .btn{
-      border:0; padding:.6rem .9rem; border-radius:10px; cursor:pointer; font-weight:700
-    }
-    .btn-primary{background:#1d4ed8;color:#fff}
-    .btn-muted{background:#374151;color:#fff}
-    .btn-link{background:transparent;color:#93c5fd;text-decoration:underline;padding:0 .25rem}
-  </style>
-
-  <!-- Tymczasowo ukryj reklamy -->
-  <style>
-    .ad-wrapper, .ad, .rail .ad, ins.adsbygoogle { display: none !important; }
-  </style>
-
-  <!-- Structured data (statyczne) -->
+  <!-- JSON-LD (statyczne jak w oryginale) -->
   <script type="application/ld+json">
   [
-    {
-      "@context":"https://schema.org",
-      "@type":"WebSite",
-      "name":"NiedzielaHandlowa.info",
-      "url":"https://www.niedzielahandlowa.info/",
-      "inLanguage":"pl-PL",
-      "potentialAction":{
-        "@type":"SearchAction",
-        "target":"https://www.niedzielahandlowa.info/?q={search_term_string}",
-        "query-input":"required name=search_term_string"
-      }
-    },
-    {
-      "@context":"https://schema.org",
-      "@type":"WebPage",
-      "name":"Kalendarz niedziel handlowych",
-      "url":"https://www.niedzielahandlowa.info/kalendarz",
-      "isPartOf":{"@type":"WebSite","name":"NiedzielaHandlowa.info","url":"https://www.niedzielahandlowa.info/"},
-      "inLanguage":"pl-PL"
-    },
-    {
-      "@context":"https://schema.org",
-      "@type":"BreadcrumbList",
-      "itemListElement":[
-        {"@type":"ListItem","position":1,"name":"Strona główna","item":"https://www.niedzielahandlowa.info/"},
-        {"@type":"ListItem","position":2,"name":"Kalendarz","item":"https://www.niedzielahandlowa.info/kalendarz"}
-      ]
-    }
+    { "@context":"https://schema.org","@type":"WebSite","name":"NiedzielaHandlowa.info","url":"https://www.niedzielahandlowa.info/","inLanguage":"pl-PL","potentialAction":{"@type":"SearchAction","target":"https://www.niedzielahandlowa.info/?q={search_term_string}","query-input":"required name=search_term_string"} },
+    { "@context":"https://schema.org","@type":"WebPage","name":"Kalendarz niedziel handlowych","url":"https://www.niedzielahandlowa.info/kalendarz","isPartOf":{"@type":"WebSite","name":"NiedzielaHandlowa.info","url":"https://www.niedzielahandlowa.info/"},"inLanguage":"pl-PL" },
+    { "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Strona główna","item":"https://www.niedzielahandlowa.info/"},
+      {"@type":"ListItem","position":2,"name":"Kalendarz","item":"https://www.niedzielahandlowa.info/kalendarz"}
+    ]}
   ]
   </script>
 </head>
@@ -169,13 +78,12 @@
   <a class="skip-link" href="#content">Pomiń nawigację i przejdź do treści</a>
 
   <div class="page">
-    <!-- Lewy rail -->
     <aside class="rail left" role="complementary" aria-label="Reklama - lewa kolumna">
       <div class="ad-wrapper">
-        <ins class="adsbygoogle ad" style="display:block" data-ad-client="ca-pub-4085660688523771" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle ad" data-ad-client="ca-pub-4085660688523771" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
       </div>
       <div class="ad-wrapper">
-        <ins class="adsbygoogle ad" style="display:block" data-ad-client="ca-pub-4085660688523771" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle ad" data-ad-client="ca-pub-4085660688523771" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins>
       </div>
     </aside>
 
@@ -189,9 +97,8 @@
         </nav>
       </header>
 
-      <!-- In-content #1 -->
       <div class="ad-wrapper" aria-label="Reklama - in content 1" role="complementary">
-        <ins class="adsbygoogle ad" style="display:block" data-ad-client="ca-pub-4085660688523771" data-ad-slot="3333333333" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle ad" data-ad-client="ca-pub-4085660688523771" data-ad-slot="3333333333" data-ad-format="auto" data-full-width-responsive="true"></ins>
       </div>
 
       <main id="content" role="main">
@@ -207,17 +114,16 @@
             Chcesz szybko sprawdzić, czy sklepy będą otwarte? Na 
             <a href="/" aria-label="Strona główna – czy dziś jest niedziela handlowa">stronie głównej</a> 
             dowiesz się, <em>czy dziś jest niedziela handlowa</em>, 
-  <em>czy jutro będzie niedziela handlowa</em>, 
-  <em>czy najbliższa niedziela jest handlowa</em> 
-  oraz zobaczysz listę trzech najbliższych terminów, 
-  w które zrobisz zakupy w niedzielę.
-</p>
+            <em>czy jutro będzie niedziela handlowa</em>, 
+            <em>czy najbliższa niedziela jest handlowa</em> 
+            oraz zobaczysz listę trzech najbliższych terminów, 
+            w które zrobisz zakupy w niedzielę.
+          </p>
           <p class="lead-small" id="lastUpdated"></p>
         </section>
 
-        <!-- In-content #2 -->
         <div class="ad-wrapper" aria-label="Reklama - in content 2" role="complementary">
-          <ins class="adsbygoogle ad" style="display:block" data-ad-client="ca-pub-4085660688523771" data-ad-slot="4444444444" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <ins class="adsbygoogle ad" data-ad-client="ca-pub-4085660688523771" data-ad-slot="4444444444" data-ad-format="auto" data-full-width-responsive="true"></ins>
         </div>
 
         <section class="card center" id="calendarTableSection">
@@ -236,7 +142,7 @@
                   <th scope="col">Data</th>
                 </tr>
               </thead>
-              <tbody id="calendarTableBody"><!-- wypełnia JS --></tbody>
+              <tbody id="calendarTableBody"></tbody>
             </table>
           </div>
           <p id="emptyState" class="lead-small" style="display:none;">
@@ -244,9 +150,8 @@
           </p>
         </section>
 
-        <!-- In-content #3 -->
         <div class="ad-wrapper" aria-label="Reklama - in content 3" role="complementary">
-          <ins class="adsbygoogle ad" style="display:block" data-ad-client="ca-pub-4085660688523771" data-ad-slot="5555555555" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <ins class="adsbygoogle ad" data-ad-client="ca-pub-4085660688523771" data-ad-slot="5555555555" data-ad-format="auto" data-full-width-responsive="true"></ins>
         </div>
       </main>
 
@@ -265,120 +170,17 @@
       </footer>
     </div>
 
-    <!-- Prawy rail -->
     <aside class="rail right" role="complementary" aria-label="Reklama - prawa kolumna">
       <div class="ad-wrapper">
-        <ins class="adsbygoogle ad" style="display:block" data-ad-client="ca-pub-4085660688523771" data-ad-slot="6666666666" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle ad" data-ad-client="ca-pub-4085660688523771" data-ad-slot="6666666666" data-ad-format="auto" data-full-width-responsive="true"></ins>
       </div>
       <div class="ad-wrapper">
-        <ins class="adsbygoogle ad" style="display:block" data-ad-client="ca-pub-4085660688523771" data-ad-slot="7777777777" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle ad" data-ad-client="ca-pub-4085660688523771" data-ad-slot="7777777777" data-ad-format="auto" data-full-width-responsive="true"></ins>
       </div>
     </aside>
   </div>
 
-  <!-- AdSense init -->
-  <script>
-    window.addEventListener('DOMContentLoaded', function(){
-      try{
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      }catch(e){}
-    });
-  </script>
-
-  <script>
-    // Daty – spójne z index.html; z dodanym 2027
-    const handlowe = [
-      "2025-01-26","2025-03-30","2025-04-27","2025-06-29","2025-08-31","2025-12-14","2025-12-21",
-      "2026-01-25","2026-03-29","2026-04-26","2026-06-28","2026-08-30","2026-12-06","2026-12-13","2026-12-20",
-      "2027-01-31","2027-03-21","2027-04-25","2027-06-27","2027-08-29","2027-12-05","2027-12-12","2027-12-19"
-    ];
-
-    function todayInWarsawISO() {
-      const f = new Intl.DateTimeFormat('en-CA', { timeZone:'Europe/Warsaw', year:'numeric', month:'2-digit', day:'2-digit' });
-      const parts = f.formatToParts(new Date());
-      const y = parts.find(p=>p.type==='year')?.value;
-      const m = parts.find(p=>p.type==='month')?.value;
-      const d = parts.find(p=>p.type==='day')?.value;
-      return `${y}-${m}-${d}`;
-    }
-    function dateVerbosePl(dateStr){
-      const opts = { year:'numeric', month:'long', day:'numeric', timeZone:'Europe/Warsaw' };
-      const date = new Date(dateStr + 'T00:00:00');
-      return date.toLocaleDateString('pl-PL', opts);
-    }
-
-    const todayStr = todayInWarsawISO();
-    const tbody = document.getElementById('calendarTableBody');
-    const emptyState = document.getElementById('emptyState');
-    const yearSpan = document.getElementById('year');
-    const lastUpdated = document.getElementById('lastUpdated');
-
-    yearSpan.textContent = new Date().toLocaleDateString('pl-PL', { year:'numeric', timeZone:'Europe/Warsaw' });
-    lastUpdated.textContent = `Aktualizacja: ${new Date().toLocaleDateString('pl-PL', { timeZone:'Europe/Warsaw' })}`;
-
-    const datesSorted = [...handlowe].sort((a,b) => a.localeCompare(b));
-    const futureDates = datesSorted.filter(d => d >= todayStr);
-
-    if (!futureDates.length) {
-      emptyState.style.display = 'block';
-    } else {
-      futureDates.forEach(d => {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `<td>${dateVerbosePl(d)}</td>`;
-        tbody.appendChild(tr);
-      });
-    }
-
-    (function injectEventsSchema(dates) {
-      if (!dates.length) return;
-      const itemList = {
-        "@context":"https://schema.org",
-        "@type":"ItemList",
-        "name":"Nadchodzące niedziele handlowe",
-        "itemListElement": dates.map((d, i) => ({
-          "@type":"ListItem",
-          "position": i + 1,
-          "item": {
-            "@type":"Event",
-            "name":"Niedziela handlowa",
-            "startDate": d,
-            "eventStatus":"https://schema.org/EventScheduled",
-            "location":{"@type":"Place","name":"Polska"}
-          }
-        }))
-      };
-      const s = document.createElement('script');
-      s.type = 'application/ld+json';
-      s.text = JSON.stringify(itemList);
-      document.head.appendChild(s);
-    })(futureDates);
-  </script>
-
-  <script>
-    (function(){
-      const KEY = 'nh_consent_v2';
-      const banner = document.getElementById('consentBanner');
-      const saved = localStorage.getItem(KEY);
-      function hide(){ banner.style.display = 'none'; }
-      function show(){ banner.style.display = 'block'; }
-      function setConsent(all){
-        if(all){
-          gtag('consent', 'update', { 'ad_user_data':'granted','ad_personalization':'granted','ad_storage':'granted','analytics_storage':'granted' });
-          localStorage.setItem(KEY, 'all');
-        }else{
-          gtag('consent', 'update', { 'ad_user_data':'denied','ad_personalization':'denied','ad_storage':'denied','analytics_storage':'denied' });
-          localStorage.setItem(KEY, 'necessary');
-        }
-      }
-      if(!saved){ show(); }
-      document.getElementById('btnAccept').addEventListener('click', function(){ setConsent(true); hide(); });
-      document.getElementById('btnReject').addEventListener('click', function(){ setConsent(false); hide(); });
-    })();
-  </script>
+  <!-- Wspólny JS -->
+  <script src="/assets/common.js"></script>
 </body>
 </html>
