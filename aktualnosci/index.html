@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff">
+
+  <title>Aktualności – NiedzielaHandlowa.info</title>
+  <meta name="description" content="Aktualności o niedzielach handlowych w Polsce. Sprawdź najnowsze informacje, zmiany w przepisach i nadchodzące terminy." />
+  <meta name="keywords" content="niedziela handlowa, aktualności, wiadomości, kalendarz niedziel handlowych" />
+  <meta name="author" content="NiedzielaHandlowa.info" />
+  <meta name="robots" content="index,follow" />
+
+  <link rel="canonical" href="https://niedzielahandlowa.info/aktualnosci/" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <style>
+    :root{
+      --step--1: clamp(0.85rem, 0.82rem + 0.15vw, 0.95rem);
+      --step-0: clamp(1rem, 0.96rem + 0.3vw, 1.125rem);
+      --step-1: clamp(1.25rem, 1.1rem + 0.9vw, 1.6rem);
+      --step-2: clamp(1.6rem, 1.3rem + 1.6vw, 2.1rem);
+      --radius: 12px;
+      --shadow-1: 0 2px 6px rgba(0,0,0,.05);
+      --shadow-2: 0 4px 12px rgba(0,0,0,.06);
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --muted-2: #374151;
+      --brand: #1d4ed8;
+      --pill: #f1f5f9;
+      --link: #1f2937;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: env(safe-area-inset-top) 1rem env(safe-area-inset-bottom);
+    }
+
+    .page { display: grid; grid-template-columns: minmax(0,1fr); gap: 16px; max-width: 1400px; margin: 0 auto; }
+    .container { max-width: 960px; margin: 0 auto; padding-inline: clamp(0.5rem, 2vw, 1rem); }
+    header { margin-bottom: 1rem; }
+
+    nav[aria-label="Główne"] { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow-1); padding: 0.9rem clamp(1rem, 2vw, 2rem); }
+    .navbar-list { display:flex; justify-content:center; list-style:none; gap: clamp(.75rem, 2vw, 2rem); flex-wrap: wrap; }
+    .navbar-list a { text-decoration:none; color: var(--link); font-weight:600; padding:.35rem .7rem; border-radius:8px; }
+    .navbar-list a:hover { background: rgba(125,125,125,.08); }
+
+    .card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow-2); padding: clamp(1rem, 2.5vw, 2rem); margin-bottom: 1rem; }
+    .card h1, .card h2 { margin-bottom: .75rem; }
+    .lead { color: var(--muted-2); margin-bottom: .75rem; font-size: var(--step-0); }
+
+    .news-list { display: grid; gap: 1rem; }
+    .news-item { padding: 1rem; border-radius: var(--radius); background: var(--pill); }
+    .news-item h3 { margin: 0 0 .5rem; font-size: var(--step-0); }
+    .news-item p { margin: 0; font-size: var(--step--1); color: var(--muted-2); }
+
+    footer { text-align: center; font-size: var(--step--1); color: var(--muted); padding: 1.25rem 0 2rem; }
+    footer nav a { margin: 0 .35rem; }
+
+    @media (min-width: 1200px){ .page { grid-template-columns: 280px minmax(0, 960px); } }
+    @media (min-width: 1440px){ .page { grid-template-columns: 300px minmax(0, 960px) 300px; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <aside class="rail left"></aside>
+
+    <div class="container">
+      <header>
+        <nav aria-label="Główne">
+          <ul class="navbar-list">
+            <li><a href="/">Strona główna</a></li>
+            <li><a href="/kalendarz">Niedziele handlowe</a></li>
+            <li><a href="/aktualnosci" aria-current="page">Aktualności</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main id="content" role="main">
+        <section class="card">
+          <h1>Aktualności o niedzielach handlowych</h1>
+          <p class="lead">Śledź najnowsze informacje o niedzielach handlowych w Polsce – zmiany w przepisach, nowe daty i ważne komunikaty.</p>
+          
+          <div class="news-list">
+            <article class="news-item">
+              <h3>Najbliższa niedziela handlowa – 25 sierpnia 2025</h3>
+              <p>Dowiedz się, które sklepy będą otwarte i jak zaplanować zakupy.</p>
+            </article>
+            <article class="news-item">
+              <h3>Kolejna niedziela handlowa – 14 grudnia 2025</h3>
+              <p>Przygotuj się na przedświąteczne zakupy w grudniu.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>Informacje mają charakter poglądowy i mogą ulec zmianie.</p>
+        <nav>
+          <a href="/privacy.html">Polityka prywatności</a> ·
+          <a href="/sitemap.xml">Sitemap</a>
+        </nav>
+        &copy; <span id="year"></span> NiedzielaHandlowa.info
+      </footer>
+    </div>
+
+    <aside class="rail right"></aside>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
